@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .heading {
+    @apply font-bold font-['open-sans'];
+  }
+  
+  .heading-sm {
+    @apply text-sm font-bold;
+  }
+  .heading-md {
+    @apply font-bold;
+  }
+  .heading-lg {
+    @apply sm:text-lg font-bold;
+  }
+  .heading-xl {
+    @apply text-lg font-bold lg:text-xl;
+  }
+  .heading-2xl {
+    @apply text-xl font-bold lg:text-2xl;
+  }
+  .heading-3xl {
+    @apply text-2xl font-bold lg:text-3xl;
+  }
+
+  .heading-4xl {
+    @apply text-2xl font-bold lg:text-4xl;
+  }
+
+  .heading-8xl {
+    @apply text-2xl font-bold lg:text-8xl;
+  }
+}
