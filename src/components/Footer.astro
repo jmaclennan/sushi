@@ -1,0 +1,31 @@
+---
+import { config } from "config";
+import Container from "./Container.astro";
+import { formatPhoneNumber } from "shared/utils";
+import { Image } from '@astrojs/image/components';
+import { Icon } from 'astro-icon';
+---
+
+<footer class=" bg-stone-800 text-white relative pt-16 pb-16 md:py-16 max-w-full overflow-hidden">
+  <Container>
+    <div class="flex space-x-16 justify-between">
+      <div class="gap-6 lg:gap-0 grid grid-cols-12 w-full ">
+        <div class="col-span-12 md:col-span-4 lg:col-span-3 space-y-6">
+          <h2 class="heading-lg">Location</h2>
+          <address class="not-italic flex flex-col space-y-1">
+            {config.address.map((a) => <span class="flex p-0 m-0 flex-col">{a}</span>)}
+          </address>
+          <a class="flex font-bold" href={`tel:${config.phone}`}>{formatPhoneNumber(config.phone)}</a>
+        </div>
+        <div class="col-span-12 md:col-span-1 md:col-start-12 flex space-x-2 justify-start md:justify-end mt-4 md:mt-0">
+          <a href="https://www.instagram.com/radstylecycle/" target="_blank">
+            <Icon pack="mdi" name="instagram" class="w-12 md:w-8" />
+          </a>
+          <a href="https://www.facebook.com/radstylecycleproshop" target="_blank">
+            <Icon pack="mdi" name="facebook" class="w-12 md:w-8" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</footer>
