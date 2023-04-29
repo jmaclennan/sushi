@@ -10,7 +10,7 @@
     @apply text-sm;
   }
   .heading-lg {
-    @apply sm:text-lg;
+    @apply text-lg;
   }
   .heading-xl {
     @apply text-lg lg:text-xl;
