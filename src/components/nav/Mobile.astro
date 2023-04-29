@@ -1,7 +1,55 @@
 
-<div class="tham tham-e-squeeze tham-w-6 nav-desktop:hidden absolute right-8" id="nav-trigger">
+<div class="tham tham-e-squeeze tham-w-8 nav-desktop:hidden absolute right-6" id="nav-trigger">
   <div class="tham-box">
     <div class="tham-inner bg-white" />
   </div>
 </div>
+
+<script>
+import { gsap } from 'gsap'
+const app = {
+  elements: {
+    trigger: document.getElementById('nav-trigger') as HTMLButtonElement,
+    drawer: document.getElementById('nav-mobile') as HTMLElement,
+  },
+  state: {
+    isOpen: false,
+    drawerWidth: 0,
+  },
+  toggle: function(state?: boolean) {
+    gsap.to(this.elements.drawer, {
+      duration: 0.25,
+      right: this.state.isOpen ? -this.state.drawerWidth : 0,
+      ease: 'power2.inOut',
+    });
+    this.elements.trigger.classList.toggle('tham-active')
+    this.state.isOpen = state || !this.state.isOpen;
+  },
+  init: function() {
+    if (!this.elements.trigger && !this.elements.drawer) {
+      console.error('missing nav elements');
+      return;
+    }
+
+    // set initial state
+    this.state.drawerWidth = app.elements.drawer.offsetWidth;
+    this.elements.drawer.style.right = `-${this.state.drawerWidth}px`
+    
+    this.elements.trigger.addEventListener('click', () => app.toggle());
+    
+    // close if user clicks outside drawer
+    document.addEventListener('click', (e) => {
+      if (this.state.isOpen && !this.elements.drawer.contains(e.target as Node) && !this.elements.trigger.contains(e.target as Node)) {
+        this.toggle(false);
+      }
+    });
+    
+    // close nav drawer on resize
+    window.addEventListener('resize', () => this.state.isOpen = false);
+    
+  }
+}
+
+app.init();
+</script>
 
