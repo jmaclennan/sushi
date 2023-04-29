@@ -1,0 +1,11 @@
+---
+import { config } from "config";
+const filteredNavItems: string[] = ["nav1", "nav2"];
+const navItems = config.nav.filter((item) => filteredNavItems.includes(item.id));
+---
+
+<nav class="hidden nav-desktop:flex">
+  <ul class="list-none flex space-x-4">
+    {navItems.map((n) => <li><a href={n.route}>{n.name}</a></li>)}
+  </ul>
+</nav>

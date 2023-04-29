@@ -4,33 +4,32 @@
 
 @layer components {
   .heading {
-    @apply font-bold font-['open-sans'];
+    @apply font-bold font-['Open_Sans'];
   }
-  
   .heading-sm {
-    @apply text-sm font-bold;
-  }
-  .heading-md {
-    @apply font-bold;
+    @apply text-sm;
   }
   .heading-lg {
-    @apply sm:text-lg font-bold;
+    @apply sm:text-lg;
   }
   .heading-xl {
-    @apply text-lg font-bold lg:text-xl;
+    @apply text-lg lg:text-xl;
   }
   .heading-2xl {
-    @apply text-xl font-bold lg:text-2xl;
+    @apply text-xl lg:text-2xl;
   }
   .heading-3xl {
-    @apply text-2xl font-bold lg:text-3xl;
+    @apply text-2xl lg:text-3xl;
   }
-
   .heading-4xl {
-    @apply text-2xl font-bold lg:text-4xl;
+    @apply text-2xl lg:text-4xl;
   }
 
   .heading-8xl {
-    @apply text-2xl font-bold lg:text-8xl;
+    @apply text-2xl lg:text-8xl;
+  }
+
+  a {
+    @apply hover:underline font-bold;
   }
 }
