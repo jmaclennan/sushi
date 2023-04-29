@@ -8,6 +8,16 @@ const app = {
     isOpen: false,
     drawerWidth: 0,
   },
+  close: function () {
+    gsap.to(this.elements.drawer, {
+      duration: 0.25,
+      right: -this.state.drawerWidth,
+      ease: 'power2.inOut',
+    });
+    this.elements.trigger.classList.remove('tham-active')
+    this.state.isOpen = false;
+  
+  },
   toggle: function(state?: boolean) {
     gsap.to(this.elements.drawer, {
       duration: 0.25,
@@ -17,7 +27,7 @@ const app = {
     this.elements.trigger.classList.toggle('tham-active')
     this.state.isOpen = state || !this.state.isOpen;
   },
-  init: function() {
+  init: function () {
     if (!this.elements.trigger && !this.elements.drawer) {
       console.error('missing nav elements');
       return;
@@ -39,11 +49,15 @@ const app = {
     // close nav drawer on resize
     window.addEventListener('resize', () => {
       if (this.state.isOpen) {
-        this.toggle(false);
+        this.close()
+      } else {
+        this.state.drawerWidth = app.elements.drawer.offsetWidth;
+        this.elements.drawer.style.right = `-${this.state.drawerWidth}px`;
       }
     });
     
     this.elements.drawer.classList.remove('pointer-events-none', 'opacity-0');
+    this.elements.drawer.style.right = `-${this.state.drawerWidth}px`
   }
 }
 
