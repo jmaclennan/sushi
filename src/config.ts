@@ -1,11 +1,11 @@
-const name = "business name"
-const description = "business description"
-const phone = 1234567890;
-const email = 'email@email.email'
-const address = ['123 Main Street', 'Beaumont, Alberta', 'T4X 1Z4, Canada']
+const name = "Radon Solutions Alberta"
+const description = "Radon gas testing and mitigation solutions in Edmonton, Calgary and Alberta"
+const phone = 7806522440;
+const email = 'info@radonsolutionsalberta.ca'
+const address = ['Edmonton, Alberta']
 const socials = {
-  facebook: 'https://www.facebook.com/',
-  instagram: 'https://www.instagram.com/',
+  facebook: 'https://www.facebook.com/radonsolutionsalberta/',
+  instagram: 'https://www.instagram.com/radonsolutionsalberta/',
 }
 
 type NavItem = {
@@ -21,14 +21,14 @@ export const nav: NavItem[] = [
     route: '/',
   },
   {
-    id: 'nav1',
-    name: 'Nav Item 1',
-    route: '/',
+    id: 'testing',
+    name: 'Testing',
+    route: '/services/testing',
   },
   {
-    id: 'nav2',
-    name: 'Nav Item 2',
-    route: '/',
+    id: 'mitigation',
+    name: 'Mitigation',
+    route: '/services/mitigation',
   },
 ]
 
