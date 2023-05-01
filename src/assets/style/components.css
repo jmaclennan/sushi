@@ -31,4 +31,8 @@
   a {
     @apply hover:underline font-bold;
   }
+  
+  button {
+    @apply font-bold bg-bg-secondary text-white rounded-md;
+  }
 }
