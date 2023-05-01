@@ -24,7 +24,6 @@
   .heading-4xl {
     @apply text-2xl lg:text-4xl;
   }
-
   .heading-8xl {
     @apply text-2xl lg:text-8xl;
   }
