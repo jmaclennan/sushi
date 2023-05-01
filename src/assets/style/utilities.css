@@ -15,3 +15,13 @@
     min-height: -webkit-fill-available;
   }
 }
+
+.section {
+  @apply py-16 md:py-32;
+}
+.section-sm {
+  @apply py-8 md:py-16;
+}
+.section-xl {
+  @apply py-32 md:py-64;
+}
