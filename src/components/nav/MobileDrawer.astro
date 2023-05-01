@@ -1,11 +1,9 @@
 ---
 import { config } from 'config';
-const filteredNavItems: string[] = ["nav1", "nav2"];
-const navItems = config.nav.filter((item) => filteredNavItems.includes(item.id));
 ---
 
 <nav id="nav-mobile" class="nav-desktop:hidden bg-bg-primary fixed right-0 w-2/3 max-w-[300px] z-20 min-safe-h-screen opacity-0 pointer-events-none">
   <ul class="list-none flex flex-col space-y-4 pt-20 px-8">
-    {navItems.map((n) => <li><a href={n.route} class="text-white">{n.name}</a></li>)}
+    {config.nav.map((n) => <li><a href={n.route} class="text-white">{n.name}</a></li>)}
   </ul>
 </nav>

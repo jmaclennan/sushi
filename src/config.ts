@@ -16,11 +16,6 @@ type NavItem = {
 
 export const nav: NavItem[] = [
   {
-    id: 'home',
-    name: 'Home',
-    route: '/',
-  },
-  {
     id: 'nav1',
     name: 'Nav Item 1',
     route: '/',
