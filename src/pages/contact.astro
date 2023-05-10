@@ -1,0 +1,19 @@
+---
+import Container from "@/components/Container.astro";
+import Layout from "@/components/Layout.astro";
+import { ContactForm } from "@/features/contact/form/ContactForm";
+
+---
+
+<Layout>
+  <section class="section section-md">
+    <Container><h1 class="heading heading-xl">Contact</h1></Container>
+  </section>
+  <section class="section section-md bg-neutral-200">
+    <Container>
+      <div class="max-w-xl">
+        <ContactForm client:only/>
+      </div>
+    </Container>
+  </section>
+</Layout>

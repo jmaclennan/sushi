@@ -19,8 +19,12 @@
 .section {
   @apply py-16 md:py-56;
 }
-.section-sm {
+.section-md {
   @apply py-8 md:py-16;
+}
+
+.section-sm {
+  @apply py-8 md:py-8;
 }
 .section-xl {
   @apply py-32 md:py-64;

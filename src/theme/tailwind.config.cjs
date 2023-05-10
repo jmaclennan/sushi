@@ -10,6 +10,8 @@ module.exports = {
 			colors: ({ theme }) => ({
 				black: 'black',
 				white: 'white',
+				error: theme.colors.red[700],
+				success: theme.colors.green[700],
 				'bg-primary': theme.colors.neutral[800],
 				'bg-secondary': theme.colors.neutral[700],
 				...themeColors

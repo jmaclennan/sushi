@@ -32,7 +32,15 @@
     @apply hover:underline font-bold;
   }
   
-  button {
-    @apply font-bold bg-bg-secondary text-white rounded-md;
+  .button {
+    @apply font-bold bg-bg-secondary text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary ;
+  }
+
+  .button-outline {
+    @apply font-bold bg-transparent text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary bg-transparent text-black
+  }
+
+  .error {
+    @apply text-error inline-block px-8 p-4 border-error bg-error/20 rounded font-semibold
   }
 }

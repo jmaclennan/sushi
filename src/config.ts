@@ -1,3 +1,5 @@
+import { routes } from "routes";
+
 const name = "business name"
 const description = "business description"
 const phone = 1234567890;
@@ -18,12 +20,17 @@ export const nav: NavItem[] = [
   {
     id: 'nav1',
     name: 'Nav Item 1',
-    route: '/',
+    route: routes.home,
   },
   {
     id: 'nav2',
     name: 'Nav Item 2',
-    route: '/',
+    route: routes.home,
+  },
+  {
+    id: 'contact',
+    name: 'Contact',
+    route: routes.contact,
   },
 ]
 
