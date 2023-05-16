@@ -19,14 +19,27 @@ const app = {
   
   },
   toggle: function () {
-    console.log('toggle', this.state.isOpen)
+    this.state.isOpen = !this.state.isOpen;
+
+    if (this.state.isOpen) {
+      gsap.set('#nav-mobile-overlay', { width: '100%'})
+    }
+
     gsap.to(this.elements.drawer, {
       duration: 0.25,
-      x: this.state.isOpen ? this.state.drawerWidth : 0,
+      x: !this.state.isOpen ? this.state.drawerWidth : 0,
       ease: 'power2.inOut',
     });
+
+    gsap.to('#nav-mobile-overlay', {
+      duration: 0.25,
+      opacity: !this.state.isOpen ? 0 : 1,
+      onComplete: () => {
+        gsap.set('#nav-mobile-overlay', { width: !this.state.isOpen ? '0' : '100%', pointerEvents: !this.state.isOpen ? 'none' : 'auto' })
+      }
+    })
+
     this.elements.trigger.classList.toggle('tham-active')
-    this.state.isOpen = !this.state.isOpen;
   },
   init: function () {
     if (!this.elements.trigger && !this.elements.drawer) {
