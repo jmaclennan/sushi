@@ -31,6 +31,10 @@
   a {
     @apply hover:underline font-bold;
   }
+
+  p {
+    @apply max-w-prose;
+  }
   
   .button {
     @apply font-bold bg-bg-secondary text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary ;
