@@ -2,14 +2,11 @@
 import Container from "@/components/Container.astro";
 import Hero from "@/components/Hero.astro";
 import Layout from "@/components/Layout.astro";
-import { SampleForm } from "@/features/home/SampleForm";
 
 ---
 <Layout>
 	<Hero>
-		<Container>
-			<SampleForm client:only />
-		</Container>
+		<h1 class="heading heading-xl">Hero</h1>
 	</Hero>
 	<section class="section bg-neutral-200">
 		<Container>
