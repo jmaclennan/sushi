@@ -2,19 +2,19 @@
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-  leftClasses?: string;
-  rightClasses?: string;
-  gridClasses?: string;
+  leftClass?: string;
+  rightClass?: string;
+  gridClass?: string;
 }
 
-const { leftClasses, rightClasses, gridClasses } = Astro.props
+const { leftClass, rightClass, gridClass } = Astro.props
 ---
 
-<div class={twMerge(`grid grid-cols-12 gap-8`, gridClasses)}>
-  <div class={twMerge(`twcol-span-12 md:col-start-2 md:col-span-10 lg:col-start-2 lg:col-span-5 order-first`, leftClasses)}>
-    <slot name="left" />
+<div class={twMerge(`grid grid-cols-12 gap-4 md:gap-8`, gridClass)}>
+  <div class={twMerge(`col-span-12 md:col-span-6 xl:col-start-2 order-first space-y-8`, leftClass)}>
+    <slot name="left" class="space-y-8" />
   </div>
-  <div class={twMerge('col-span-12 md:col-start-2 md:col-span-10 lg:col-start-7 lg:col-span-5 xl:col-span-4 xl:col-start-8', rightClasses)}>
+  <div class={twMerge('col-span-12 md:col-span-5 md:col-start-8 xl:col-span-4 xl:col-start-8 space-y-8', rightClass)}>
     <slot name="right" />
   </div>
 </div>

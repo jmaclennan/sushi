@@ -1,18 +1,20 @@
 ---
-import { config } from "config";
-import Container from "./Container.astro";
-import Desktop from "./nav/Desktop.astro";
-import Mobile from "./nav/Mobile.astro";
+import { twMerge } from "tailwind-merge";
+
+type Props = {
+  leftClass?: string;
+  rightClass?: string;
+  gridClass?: string;
+}
+
+const { leftClass, rightClass, gridClass } = Astro.props
 ---
 
-<header class="py-4 bg-black text-white fixed w-full z-20">
-  <Container class="flex flex-col relative items-center">
-    <div class="flex justify-between items-center w-full">
-      <h1 class="heading text-primary uppercase">{config.name}</h1>
-      <Desktop />
-    </div>
-  </Container>
-</header>
-<header class="py-4 text-white fixed w-full z-50">
-  <Mobile />
-</header>
+<div class={twMerge(`grid grid-cols-12 gap-4 md:gap-8`, gridClass)}>
+  <div class={twMerge(`col-span-12 md:col-span-6 xl:col-start-2 order-first space-y-8`, leftClass)}>
+    <slot name="left" class="space-y-8" />
+  </div>
+  <div class={twMerge('col-span-12 md:col-span-5 md:col-start-8 xl:col-span-4 xl:col-start-8 space-y-8', rightClass)}>
+    <slot name="right" />
+  </div>
+</div>

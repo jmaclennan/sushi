@@ -1,0 +1,16 @@
+---
+import { twMerge } from "tailwind-merge";
+
+type Props = {
+  classes?: string;
+  gridClass?: string;
+}
+
+const { classes, gridClass } = Astro.props
+---
+
+<div class={twMerge(`grid grid-cols-12 gap-4 md:gap-8`, gridClass)}>
+  <div class={twMerge(`col-span-12 xl:col-span-10 xl:col-start-2 space-y-8`, classes)}>
+    <slot />
+  </div>
+</div>
