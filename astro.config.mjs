@@ -4,6 +4,8 @@ import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'http://localhost:3000',
@@ -11,5 +13,5 @@ export default defineConfig({
     config: {
       path: 'src/theme/tailwind.config.cjs'
     }
-  }), image(), sitemap(), react()]
+  }), image(), sitemap(), react(), mdx()]
 });
