@@ -1,8 +1,9 @@
 ---
+import { twMerge } from "tailwind-merge";
 
 export const MAX_CONTAINER_WIDTH = 600
 const { class: childClass } = Astro.props;
 ---
-<div class={`max-w-screen-2xl mx-auto px-6 md:px-8 ${childClass ? childClass : ''}`}>
+<div class:list={twMerge(['max-w-screen-2xl mx-auto px-6 md:px-8', childClass])}>
   <slot />
 </div>
