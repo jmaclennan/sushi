@@ -29,3 +29,7 @@
 .section-xl {
   @apply py-32 md:py-64;
 }
+
+.stagger-load {
+  opacity: 0;
+}
