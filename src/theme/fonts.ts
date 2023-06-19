@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 const fontFamily = {
   sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
   heading: ['Yatra One', ...defaultTheme.fontFamily.sans],
-}
+};
 
 const fontSize = {
   xs: ['.75rem', { lineHeight: '1rem' }],
@@ -15,10 +15,10 @@ const fontSize = {
   '3xl': ['4.5rem', { lineHeight: '5.625rem' }],
   '4xl': ['6rem', { lineHeight: '7.5rem' }],
   '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
-}
+};
 const fonts = {
-	fontFamily,
-	fontSize,
-}
+  fontFamily,
+  fontSize,
+};
 
 exports.fonts = fonts;

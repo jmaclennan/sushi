@@ -61,7 +61,6 @@ const rules = {
 
   // Nameless functions are okay
   'func-names': 'off',
-
   'no-unused-vars': 'warn',
   'import/no-unresolved': ['off'],
   'import/extensions': 'off',
@@ -71,6 +70,13 @@ const rules = {
 
 module.exports = {
   // ...
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+  },
   extends: ['plugin:astro/recommended', 'airbnb', 'plugin:astro/recommended'],
 
   // ...
