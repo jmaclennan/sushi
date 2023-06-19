@@ -41,7 +41,7 @@
   }
 
   .button-outline {
-    @apply font-bold bg-transparent text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary bg-transparent text-black
+    @apply font-bold  rounded-md px-4 py-2 focus:outline-none border border-bg-secondary bg-transparent text-black
   }
 
   .error {
