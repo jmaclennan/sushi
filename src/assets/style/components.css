@@ -4,7 +4,7 @@
 
 @layer components {
   .heading {
-    @apply font-bold font-['Open_Sans'];
+    @apply font-bold font-['Yatra_One'];
   }
   .heading-sm {
     @apply text-sm;
