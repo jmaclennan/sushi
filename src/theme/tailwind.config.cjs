@@ -16,6 +16,9 @@ module.exports = {
 				'bg-secondary': theme.colors.neutral[700],
 				...themeColors
 			}),
+			maxWidth: {
+				'4xl': '1920px',
+			},
 			...fonts,
 			screens
 		},
