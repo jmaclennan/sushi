@@ -1,5 +1,3 @@
-
-
 // add custom color definitions here
 
 const themeColors = {

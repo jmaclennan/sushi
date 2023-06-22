@@ -9,9 +9,17 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'http://localhost:3000',
-  integrations: [tailwind({
-    config: {
-      path: 'src/theme/tailwind.config.cjs',
-    },
-  }), image(), sitemap(), react(), mdx()],
+  integrations: [
+    tailwind({
+      config: {
+        path: 'src/theme/tailwind.config.cjs',
+      },
+    }),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
+    sitemap(),
+    react(),
+    mdx(),
+  ],
 });

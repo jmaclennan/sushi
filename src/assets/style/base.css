@@ -5,6 +5,6 @@
 @layer base {
   html {
     background-color: #f6f6f6;
-    @apply text-stone-700
+    @apply text-stone-600;
   }
 }

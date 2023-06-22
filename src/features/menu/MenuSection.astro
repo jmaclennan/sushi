@@ -1,0 +1,139 @@
+---
+import Container from '@/components/Container.astro';
+import ContentBlock from '@/components/ContentBlock.astro';
+import Food from '@/assets/images/sushi-1.webp';
+import { Image } from '@astrojs/image/components';
+import MenuItem from './MenuItem.astro';
+
+const menuItems = [
+  {
+    id: 'j20',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+  },
+  {
+    id: 'j21',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    id: 'j22',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+  },
+  {
+    id: 'j23',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+  {
+    id: 'j24',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+  },
+  {
+    id: 'j25',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+  {
+    id: 'j26',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+    spicy: true,
+  },
+  {
+    id: 'j27',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+
+  },
+  {
+    id: 'j28',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+  },
+  {
+    id: 'j29',
+    name: 'lorem ipsum dolor sit amet',
+    price: 18.22,
+  },
+
+];
+
+---
+
+  <section class="section bg-neutral-200 bg-red-800/80">
+    <Container>
+      <ContentBlock>
+        <h2 class="heading heading-xl text-white">Menu</h2>
+
+        <!-- MENUBLOCK -->
+        <div class="flex flex-col space-y-8">
+          <div class="p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
+            <div class="space-y-8">
+              <div class="p-4 text-center text-sm bg-neutral-100 rounded">
+                <h3 class="heading heading-lg text-red-600">Teryaki Entree</h3>
+                <p class="inline-block">Served with miso soup / steamed rice</p>
+              </div>
+
+            <div class="columns-1 md:columns-2 md:gap-16">
+              {menuItems.map((item) => (
+                <div class="flex-nowrap break-inside-avoid">
+                  <MenuItem {...item} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between items-center font-bold">
+              <div class="flex flex-col justify-center items-center space-y-2 text-sm">
+                <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4/3} width={400} />
+                <span>J22 - Lorem Ipsum Dolor</span>
+              </div>
+              <div class="flex flex-col justify-center items-center space-y-2 text-sm">
+                <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4/3} width={400} />
+                <span>J22 - Lorem Ipsum Dolor</span>
+              </div>
+              <div class="flex flex-col justify-center items-center space-y-2 text-sm">
+                <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4/3} width={400} />
+                <span>J22 - Lorem Ipsum Dolor</span>
+              </div>
+            </div>
+
+            <div class="columns-1 md:columns-2 md:gap-16">
+              <div class="col-span-12 md:col-span-6 space-y-8">
+                <div class="text-center text-sm bg-neutral-100 rounded p-4">
+                  <h4 class="heading heading-lg text-red-600">Katsu</h4>
+                  <p>Served with miso soup / steamed rice & salad</p>
+                </div>
+                <div>
+                {menuItems.slice(0, 4).map((item) => (
+                  <div class="flex-nowrap break-inside-avoid">
+                    <MenuItem {...item} />
+                  </div>
+                ))}
+                </div>
+              </div>
+              <div class="col-span-12 md:col-span-6 space-y-8">
+                <div class="text-center text-sm bg-neutral-100 rounded p-4">
+                  <h4 class="heading heading-lg text-red-600">Stir Fried Noodles</h4>
+                  <p>Spicy or regular choice of udon/soba/ramen</p>
+                </div>
+                <div>
+                  {menuItems.slice(0, 4).map((item) => (
+                    <div class="flex-nowrap break-inside-avoid">
+                      <MenuItem {...item} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+        </div>
+      </ContentBlock>
+
+    </Container>
+  </section>

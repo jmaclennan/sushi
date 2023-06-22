@@ -1,16 +1,13 @@
 ---
-import Container from "@/components/Container.astro";
-import Hero from "@/components/Hero.astro";
-import Layout from "@/components/Layout.astro";
+import Container from '@/components/Container.astro';
+import Hero from '@/components/Hero.astro';
+import Layout from '@/components/Layout.astro';
+import MenuSection from '@/features/menu/MenuSection.astro';
 
 ---
-<Layout>
-	<Hero>
-		<h1 class="heading heading-xl">Hero</h1>
-	</Hero>
-	<section class="section bg-neutral-200">
-		<Container>
-			<h2 class="heading heading-lg">Section</h2>
-		</Container>
-	</section>
-</Layout>
+  <Layout>
+    <Hero>
+      <h1 class="heading heading-xl">Hero</h1>
+    </Hero>
+    <MenuSection />
+  </Layout>
