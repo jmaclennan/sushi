@@ -1,19 +1,21 @@
 ---
-type Props = {
-  id: string,
-  name: string,
-  price: number
-  description?: string,
-  spicy?: boolean
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'food'>['data']['items'][0] & {
+  category: string
 }
 
 const {
-  id, name, price, spicy, description,
+  id, name, description, price, spicy, category,
 } = Astro.props;
+
 ---
 
   <li class="flex space-between w-full border-solid border-b border-neutral-300 border-b-1 space-x-4 py-4 md:py-2">
-    <div><span class="text-neutral-700 uppercase text-sm font-bold">{id}</span></div>
+    <div class="text-neutral-700 uppercase text-sm font-bold flex items-start pt-1">
+      <span>{category}</span>
+      <span>{id}</span>
+    </div>
     <div class="flex flex-col">
       <div class="flex ">
         <span class="text-stone-600">
@@ -24,9 +26,9 @@ const {
       </div>
       {description && <span class="text-sm">{description}</span>}
     </div>
-    <span class="text-neutral-600 whitespace-nowrap text-right flex-grow">
-      $
-      {price}
-    </span>
+    <div class="text-neutral-600 whitespace-nowrap text-right flex-grow flex justify-end">
+      <span>$</span>
+      <span>{price}</span>
+    </div>
 
   </li>

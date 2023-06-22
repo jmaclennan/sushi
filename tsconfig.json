@@ -9,6 +9,8 @@
       "@/features/*": ["features/*"],
       "@/assets/*": ["assets/*"],
       "@/shared/*": ["shared/*"]
-    }
+    },
+    "strictNullChecks": true,
+    "allowJs": true
   }
 }

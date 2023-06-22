@@ -3,6 +3,7 @@ const rules = {
   'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
 
   'react/jsx-filename-extension': 'off',
+  'react/jsx-props-no-spreading': 'off',
   'import/prefer-default-export': 'off',
 
   // Discourage reassigning parameters but allow for special cases

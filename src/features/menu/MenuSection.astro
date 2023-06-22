@@ -4,65 +4,12 @@ import ContentBlock from '@/components/ContentBlock.astro';
 import Food from '@/assets/images/sushi-1.webp';
 import { Image } from '@astrojs/image/components';
 import MenuItem from './MenuItem.astro';
+import { getCollection } from 'astro:content';
 
-const menuItems = [
-  {
-    id: 'j20',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-  },
-  {
-    id: 'j21',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-  },
-  {
-    id: 'j22',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-  },
-  {
-    id: 'j23',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 'j24',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-  },
-  {
-    id: 'j25',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 'j26',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-    spicy: true,
-  },
-  {
-    id: 'j27',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-
-  },
-  {
-    id: 'j28',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-  },
-  {
-    id: 'j29',
-    name: 'lorem ipsum dolor sit amet',
-    price: 18.22,
-  },
-
-];
+const food = await getCollection('food');
+const teriyaki = food.filter((item) => String(item.id) === 'teriyaki')[0];
+const katsu = food.filter((item) => String(item.id) === 'katsu')[0];
+const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
 
 ---
 
@@ -81,9 +28,9 @@ const menuItems = [
               </div>
 
             <div class="columns-1 md:columns-2 md:gap-16">
-              {menuItems.map((item) => (
+              {teriyaki?.data.items.map((item) => (
                 <div class="flex-nowrap break-inside-avoid">
-                  <MenuItem {...item} />
+                  <MenuItem {...item} category="J"/>
                 </div>
               ))}
             </div>
@@ -110,12 +57,10 @@ const menuItems = [
                   <h4 class="heading heading-lg text-red-600">Katsu</h4>
                   <p>Served with miso soup / steamed rice & salad</p>
                 </div>
-                <div>
-                {menuItems.slice(0, 4).map((item) => (
-                  <div class="flex-nowrap break-inside-avoid">
-                    <MenuItem {...item} />
-                  </div>
-                ))}
+                <div class="break-inside-avoid">
+                  {katsu.data.items.map((item) => (
+                    <MenuItem {...item} category="k" />
+                  ))}
                 </div>
               </div>
               <div class="col-span-12 md:col-span-6 space-y-8">
@@ -123,11 +68,9 @@ const menuItems = [
                   <h4 class="heading heading-lg text-red-600">Stir Fried Noodles</h4>
                   <p>Spicy or regular choice of udon/soba/ramen</p>
                 </div>
-                <div>
-                  {menuItems.slice(0, 4).map((item) => (
-                    <div class="flex-nowrap break-inside-avoid">
-                      <MenuItem {...item} />
-                    </div>
+                <div class="break-inside-avoid">
+                  {noodles.data.items.map((item) => (
+                    <MenuItem {...item} category="k" />
                   ))}
                 </div>
               </div>
