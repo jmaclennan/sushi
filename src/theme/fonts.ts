@@ -2,7 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 const fontFamily = {
   sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
-  heading: ['Yatra One', ...defaultTheme.fontFamily.sans],
+  heading: ['Jost', ...defaultTheme.fontFamily.sans],
+  "heading-secondary": ['Chewy', ...defaultTheme.fontFamily.sans],
+  scroll: ['Yatra One', ...defaultTheme.fontFamily.sans],
 };
 
 const fontSize = {

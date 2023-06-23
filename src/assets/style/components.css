@@ -4,7 +4,7 @@
 
 @layer components {
   .heading {
-    @apply font-bold font-['Yatra_One'];
+    @apply font-bold font-heading;
   }
   .heading-sm {
     @apply text-sm;
@@ -35,16 +35,16 @@
   p {
     @apply max-w-prose;
   }
-  
+
   .button {
-    @apply font-bold bg-bg-secondary text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary ;
+    @apply font-bold bg-bg-secondary text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary;
   }
 
   .button-outline {
-    @apply font-bold  rounded-md px-4 py-2 focus:outline-none border border-bg-secondary bg-transparent text-black
+    @apply font-bold  rounded-md px-4 py-2 focus:outline-none border border-bg-secondary bg-transparent text-black;
   }
 
   .error {
-    @apply text-error inline-block px-8 p-4 border-error bg-error/20 rounded font-semibold
+    @apply text-error inline-block px-8 p-4 border-error bg-error/20 rounded font-semibold;
   }
 }

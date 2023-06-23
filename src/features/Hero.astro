@@ -1,0 +1,82 @@
+---
+import Container from "@/components/Container.astro";
+import HeroContainer from "@/components/HeroContainer.astro";
+import { formatPhoneNumber } from "@/shared/utils";
+import { config } from "config";
+import { Icon } from 'astro-icon';
+
+---
+
+<section class="max-w-full relative overflow-hidden h-screen">
+  <video muted autoplay loop playsinline class="absolute object-right lg:object-center min-w-screen mx-auto top-0 bottom-0 aspect-video object-cover min-h-[100vh] min-w-[100%] opacity-0" id="bg-video">
+    <source src="/hero-bg.mp4" type="video/mp4" />
+  </video>
+  <div class="w-full h-full min-h-[100vh] bg-black/70 absolute" />
+  <HeroContainer class="min-h-[80vh]">
+    <Container>
+      <div class="grid grid-cols-12 text-white lg:flex-row justify-between relative w-full max-w-screen-2xl">
+        <div class="col-span-10 col-start-2 flex flex-col flex-grow justify-center space-y-4 -mt-[5vh] lg:-mt-[5vh] items-center">
+          <div class="rounded-full w-[400px] h-[400px] bg-black border-[10px] text-red-500 font-bold text-2xl flex items-center justify-center opacity-0" id="logo">Logo</div>
+          <div class="flex flex-col opacity-0 heading text-[5vh] leading-[5vh] lg:text-[8vh] lg:leading-[7vh] xl:text-base xl:leading-none text-white max-w-4xl text-center space-y-4 font-sans" id="heading"><span>Beaumont, AB</span>  <span>{formatPhoneNumber(config.phone)}</span> </div>
+          <div class="flex flex-col py-16 text-center space-y-4">
+            <span class="opacity-0 heading text-[4vh] leading-[4vh] lg:text-[5vh] lg:leading-[7vh] xl:text-lg xl:leading-none text-primary-500 text-scroll" id="sub-heading">It's gotta be good!</span>
+            <div class="heading text-[4vh] leading-[4vh] lg:text-[5vh] lg:leading-[7vh] xl:text-lg xl:leading-none text-primary-500 flex space-x-4">
+              <span class="inline-block js-slogan-stagger opacity-0">The <strong>people</strong>.</span>
+              <span class="inline-block js-slogan-stagger opacity-0">The <strong>place</strong>.</span>
+              <span class="inline-block js-slogan-stagger opacity-0">The <strong>food</strong>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+    
+  </HeroContainer>
+  <div class="bg-gradient-to-t from-black from-10% to-transparent w-full absolute bottom-0 h-64 flex items-end justify-center">
+    <Icon name="ion:chevron-down" class="w-[80px] animate-bounce lg:mb-16 opacity-0" id="scroll-cta"/>
+  </div>
+</section>
+
+
+<script>
+  import { gsap } from 'gsap';
+  const logo: HTMLDivElement | null = document.querySelector('#logo')
+  const heading: HTMLSpanElement | null = document.querySelector('#heading');
+  const subHeading: HTMLSpanElement | null = document.querySelector('#sub-heading');
+  const subSection: HTMLElement | null = document.querySelector('#sub-section')
+  const scrollCta: HTMLElement | null = document.querySelector('#scroll-cta')
+  const hasScrolled = window.scrollY > 0
+  const tl = gsap.timeline();
+
+  if (hasScrolled && subSection) {
+    subSection.classList.add('opacity-100')
+  }
+
+  tl.set(subSection, {opacity: 1})
+  .fromTo(logo, {opacity: 0, y: 25},{ duration: .75, opacity: 1, y:0, ease: 'power2.out'})
+  .fromTo(heading, {opacity: 0, y: 25},{ duration: .75, opacity: 1, y:0, ease: 'power2.out'})
+  .fromTo(subHeading, {opacity: 0, y: 25},{ duration: 1, opacity: 1, y:0, ease: 'power2.out'}, "-=.25")
+  .fromTo(subSection, {y: hasScrolled ? 0 : '40vh'},{ duration: .75, y:0, ease: 'power4.out'}, "-=.75")
+  .fromTo('.js-slogan-stagger', {opacity: 0, y: 10}, { stagger: .5, duration: .75, opacity: 1, y: 0, ease: 'power4.out'})
+  .fromTo(scrollCta, {opacity: 0},{ duration: .75, opacity: 1, ease: 'power4.out'}, "+=1")
+
+
+  function showVideo(videoEl: HTMLVideoElement) {
+    // check if video is ready to play
+    if (videoEl.readyState >= 4) {
+      // use GSAP to reveal the videoEl
+      gsap.to(videoEl, { duration: 0.5, display: 'block', opacity: 1 });
+    } else {
+      // if video is not ready, wait 100ms and check again
+      setTimeout(function() {
+        showVideo(videoEl);
+      }, 100);
+    }
+  }
+
+  const bgVideo: HTMLVideoElement | null = document.querySelector('#bg-video');
+
+    window.addEventListener("load", (event) => {
+    if (bgVideo) showVideo(bgVideo);
+  });
+
+</script>

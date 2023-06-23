@@ -14,19 +14,19 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
 
 ---
 
-  <section class="section bg-neutral-200 bg-red-800/80">
+  <section class="section bg-red-800">
     <Container>
       <ContentBlock>
-        <h2 class="heading heading-xl text-white">Menu</h2>
+        <h2 class="heading heading-xl text-white font-heading text-2xl">Menu</h2>
         <!-- MENUBLOCK -->
         <div class="flex flex-col space-y-8">
-          <div class="p-0 md:p-8 lg:p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
+          <div class="p-0 md:p-8 lg:p-12 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
             <div class="space-y-8">
               <div class="p-4 text-center text-sm bg-neutral-100 rounded">
-                <h3 class="heading heading-lg text-red-600">Teryaki Entree</h3>
+                <h3 class="heading heading-xl font-heading-secondary text-red-600">Teryaki Entree</h3>
                 <p class="inline-block">Served with miso soup / steamed rice</p>
               </div>
-              <ul class="list-none columns-1 md:columns-2 md:gap-8 lg:gap-16">
+              <ul class="list-none columns-1 md:columns-2 md:gap-8 lg:gap-12">
                 {teriyaki?.data.items.map((item) => (
                   <MenuItem {...item} category="J" client:only />
                 ))}
@@ -48,10 +48,10 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
               </div>
             </div>
 
-            <div class="columns-1 md:columns-2 md:gap-8 lg:gap-16">
+            <div class="columns-1 md:columns-2 md:gap-8 lg:gap-12">
               <div class="col-span-12 md:col-span-6 space-y-8">
                 <div class="text-center text-sm bg-neutral-100 rounded p-4 break-inside-avoid">
-                  <h4 class="heading heading-lg text-red-600">Katsu</h4>
+                  <h4 class="heading heading-xl font-heading-secondary text-red-600">Katsu</h4>
                   <p>Served with miso soup / steamed rice & salad</p>
                 </div>
                 <ul class="list-none">
@@ -62,7 +62,7 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
               </div>
               <div class="col-span-12 md:col-span-6 space-y-8">
                 <div class="text-center text-sm bg-neutral-100 rounded p-4 break-inside-avoid">
-                  <h4 class="heading heading-lg text-red-600">Stir Fried Noodles</h4>
+                  <h4 class="heading heading-xl font-heading-secondary text-red-600">Stir Fried Noodles</h4>
                   <p>Spicy or regular choice of udon/soba/ramen</p>
                 </div>
                 <ul class="list-none">
