@@ -1,9 +1,17 @@
+---
+import { CartWrapper } from "../Cart/CartWrapper";
 
-<div class="tham tham-e-squeeze tham-w-8 nav-desktop:hidden absolute right-6" id="nav-trigger">
-  <div class="tham-box">
-    <div class="tham-inner bg-white" />
-  </div>
+---
+
+
+<div class="flex items-center">
+  <CartWrapper client:only />
+  <!-- <div class="tham tham-e-squeeze tham-w-8 nav-desktop:hidden absolute right-6" id="nav-trigger">
+    <div class="tham-box">
+      <div class="tham-inner bg-white" />
+    </div>
+  </div> -->
 </div>
 
-<script src="./mobile-nav.ts" />
+<!-- <script src="./mobile-nav.ts" /> -->
 

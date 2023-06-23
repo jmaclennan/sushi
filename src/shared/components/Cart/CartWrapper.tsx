@@ -59,11 +59,7 @@ export const CartWrapper: React.FC = () => {
       <button
         className="text-[28px] flex items-center relative hover:text-red-400"
         onClick={(e) => {
-          console.log("cartOpen", cartOpen);
-          setCartOpen((prev) => {
-            console.log("prev", prev);
-            return !prev;
-          });
+          setCartOpen((prev) => !prev);
         }}
         ref={triggerRef}
       >
@@ -79,7 +75,7 @@ export const CartWrapper: React.FC = () => {
       </button>
       {cartOpen && (
         <div
-          className="absolute -right-3 text-neutral-700"
+          className="absolute -right-5 md:-right-3 text-neutral-700"
           style={{ top: `${HEADER_MIN_HEIGHT / 1.05}px` }}
           ref={menuContainerRef}
         >

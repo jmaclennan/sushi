@@ -20,11 +20,14 @@ export const HEADER_MIN_HEIGHT = 45;
     <Container class="flex flex-col relative items-center">
       <div class="flex justify-between items-center w-full">
         <a href={routes.home} class="text-red-500">SUSHI</a>
-        <Desktop />
+        <nav class="hidden nav-desktop:flex">
+          <Desktop />
+        </nav>
+        <div class="flex justify-end nav-desktop:hidden p-2 right-0 top-1 text-white relative z-50">
+          <Mobile />
+        </div>
       </div>
     </Container>
   </div>
+  
 </header>
-<div class="flex justify-end nav-desktop:hidden px-6 py-4 right-0 top-1 text-white fixed z-50">
-  <Mobile />
-</div>
