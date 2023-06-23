@@ -1,10 +1,10 @@
-import { formatPrice } from "@/shared/utils";
+import { formatPhoneNumber, formatPrice } from "@/shared/utils";
 import type React from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { CgTrash, CgAddR, CgRemoveR } from "react-icons/cg";
-
 import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
+import { config } from "config";
 
 export type CartItem = {
   id: number;
@@ -58,11 +58,17 @@ export const Cart: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm">
+    <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm md:min-w-[400px] shadow-lg">
       <header className="border-b border-neutral-400 py-2">
         <span className="header font-bold">Your Order</span>
       </header>
+
       <ul className="space-y-2 w-full border-neutral-300 border-b-1 border-1">
+        {!cart.length && (
+          <p className="center text-center py-8 opacity-50">
+            Click on menu items to add to your order.
+          </p>
+        )}
         {cart.map((item) => (
           <li
             className="flex w-full space-x-4 py-2 border-solid border-b border-neutral-300 border-b-1 last:border-0"
@@ -114,19 +120,28 @@ export const Cart: React.FC = () => {
           </li>
         ))}
       </ul>
+
       {!!cart.length && (
-        <footer className="space-y-2 border-t border-neutral-400 py-2">
-          <div className="flex justify-between">
-            <span>Subtotal:</span> <span>{formatPrice(totals.subTotal)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>GST:</span> <span>{formatPrice(totals.gst)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Total:</span> <span>{formatPrice(totals.total)}</span>
+        <footer className="border-t border-neutral-400 py-2 space-y-4">
+          <div>
+            <div className="flex justify-between">
+              <span>Subtotal:</span> <span>{formatPrice(totals.subTotal)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>GST:</span> <span>{formatPrice(totals.gst)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Total:</span> <span>{formatPrice(totals.total)}</span>
+            </div>
           </div>
         </footer>
       )}
+      <a
+        href={`tel:${config.phone}`}
+        className="block button w-full text-center"
+      >
+        Order By Phone: {formatPhoneNumber(config.phone)}
+      </a>
     </div>
   );
 };

@@ -1,9 +1,11 @@
 ---
 import { config } from "config";
+import { CartWrapper} from '@/components/Cart/CartWrapper'
 ---
 
 <nav class="hidden nav-desktop:flex">
-  <ul class="list-none flex space-x-4">
+  <ul class="list-none flex space-x-4 text-sm items-center">
     {config.nav.map((n) => <li><a href={n.route}>{n.name}</a></li>)}
+    <li><CartWrapper client:only /></li>
   </ul>
 </nav>

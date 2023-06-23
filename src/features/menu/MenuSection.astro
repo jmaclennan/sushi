@@ -18,7 +18,6 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
     <Container>
       <ContentBlock>
         <h2 class="heading heading-xl text-white">Menu</h2>
-        <Cart client:load />
         <!-- MENUBLOCK -->
         <div class="flex flex-col space-y-8">
           <div class="p-0 md:p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
@@ -29,9 +28,7 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
               </div>
               <ul class="list-none columns-1 md:columns-2 md:gap-16">
                 {teriyaki?.data.items.map((item) => (
-                  <div class="flex-nowrap break-inside-avoid  border-solid border-b border-neutral-300 border-b-1">
-                    <MenuItem {...item} category="J" client:load/>
-                  </div>
+                  <MenuItem {...item} category="J" client:only />
                 ))}
               </ul>
             </div>
@@ -59,7 +56,7 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
                 </div>
                 <ul class="break-inside-avoid list-none">
                   {katsu.data.items.map((item) => (
-                    <MenuItem {...item} category="k" client:load/>
+                    <MenuItem {...item} category="k" client:only/>
                   ))}
                 </ul>
               </div>
@@ -70,7 +67,7 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
                 </div>
                 <ul class="break-inside-avoid list-none">
                   {noodles.data.items.map((item) => (
-                    <MenuItem {...item} category="k" client:load />
+                    <MenuItem {...item} category="k" client:only />
                   ))}
                 </ul>
               </div>
