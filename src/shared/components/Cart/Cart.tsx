@@ -57,10 +57,22 @@ export const Cart: React.FC = () => {
     );
   };
 
+  const handleClear = () => {
+    setCart([]);
+  };
+
   return (
-    <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm md:min-w-[400px] shadow-lg">
-      <header className="border-b border-neutral-400 py-2">
+    <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm md:min-w-[450px] shadow-lg">
+      <header className="border-b border-neutral-400 py-2 justify-between flex">
         <span className="header font-bold">Your Order</span>
+        {!!cart.length && (
+          <button
+            onClick={() => handleClear()}
+            className="flex-shrink flex items-center text-error/50 hover:text-error text-[24px]"
+          >
+            <CgTrash />
+          </button>
+        )}
       </header>
 
       <ul className="space-y-2 w-full border-neutral-300 border-b-1 border-1">
@@ -78,9 +90,9 @@ export const Cart: React.FC = () => {
               <button
                 onClick={() => handleDecreaseQuantity(item.id, item.category)}
                 className={twMerge(
-                  "opacity-50 hover:opacity-100",
+                  "opacity-50 hover:opacity-100 text-[24px]",
                   item.quantity <= 1 &&
-                    "cursor-not-allowed opacity-20 hover:opacity-20"
+                    "cursor-not-allowed opacity-20 hover:opacity-20 "
                 )}
               >
                 <CgRemoveR />
@@ -95,7 +107,7 @@ export const Cart: React.FC = () => {
               </span>
               <button
                 onClick={() => handleIncreaseQuantity(item.id, item.category)}
-                className="opacity-50 hover:opacity-100"
+                className="opacity-50 hover:opacity-100 text-[24px]"
               >
                 <CgAddR />
               </button>
@@ -113,7 +125,7 @@ export const Cart: React.FC = () => {
             </div>
             <button
               onClick={() => handleDelete(item.id, item.category)}
-              className="flex-shrink flex items-center text-error/50 hover:text-error"
+              className="flex-shrink flex items-center text-error/50 hover:text-error text-[24px]"
             >
               <CgTrash />
             </button>

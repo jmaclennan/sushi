@@ -20,7 +20,7 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
         <h2 class="heading heading-xl text-white">Menu</h2>
         <!-- MENUBLOCK -->
         <div class="flex flex-col space-y-8">
-          <div class="p-0 md:p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
+          <div class="p-0 md:p-8 lg:p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
             <div class="space-y-8">
               <div class="p-4 text-center text-sm bg-neutral-100 rounded">
                 <h3 class="heading heading-lg text-red-600">Teryaki Entree</h3>
@@ -33,41 +33,41 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
               </ul>
             </div>
 
-            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between items-center font-bold">
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between items-center font-bold md:space-x-8">
               <div class="flex flex-col justify-center items-center space-y-2 text-sm">
                 <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
-                <span>J22 - Lorem Ipsum Dolor</span>
+                <span>X1 - Placeholder</span>
               </div>
               <div class="flex flex-col justify-center items-center space-y-2 text-sm">
                 <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
-                <span>J22 - Lorem Ipsum Dolor</span>
+                <span>X1 - Placeholder</span>
               </div>
               <div class="flex flex-col justify-center items-center space-y-2 text-sm">
                 <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
-                <span>J22 - Lorem Ipsum Dolor</span>
+                <span>X1 - Placeholder</span>
               </div>
             </div>
 
             <div class="columns-1 md:columns-2 md:gap-16">
               <div class="col-span-12 md:col-span-6 space-y-8">
-                <div class="text-center text-sm bg-neutral-100 rounded p-4">
+                <div class="text-center text-sm bg-neutral-100 rounded p-4 break-inside-avoid">
                   <h4 class="heading heading-lg text-red-600">Katsu</h4>
                   <p>Served with miso soup / steamed rice & salad</p>
                 </div>
-                <ul class="break-inside-avoid list-none">
+                <ul class="list-none">
                   {katsu.data.items.map((item) => (
-                    <MenuItem {...item} category="k" client:only/>
+                    <MenuItem {...item} category={katsu.data.category} client:only/>
                   ))}
                 </ul>
               </div>
               <div class="col-span-12 md:col-span-6 space-y-8">
-                <div class="text-center text-sm bg-neutral-100 rounded p-4">
+                <div class="text-center text-sm bg-neutral-100 rounded p-4 break-inside-avoid">
                   <h4 class="heading heading-lg text-red-600">Stir Fried Noodles</h4>
                   <p>Spicy or regular choice of udon/soba/ramen</p>
                 </div>
-                <ul class="break-inside-avoid list-none">
+                <ul class="list-none">
                   {noodles.data.items.map((item) => (
-                    <MenuItem {...item} category="k" client:only />
+                    <MenuItem {...item} category={noodles.data.category} client:only />
                   ))}
                 </ul>
               </div>
