@@ -121,7 +121,7 @@ export const Cart: React.FC = () => {
                 {" - "}
                 {item.name}
               </div>
-              <span>{formatPrice(item.price * item.quantity)}</span>
+              <span>{formatPrice(item.price)}</span>
             </div>
             <button
               onClick={() => handleDelete(item.id, item.category)}

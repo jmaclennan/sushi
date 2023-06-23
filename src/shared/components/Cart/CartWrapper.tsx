@@ -54,6 +54,8 @@ export const CartWrapper: React.FC = () => {
 
   useOnClickOutside(menuContainerRef, handleClickOutside);
 
+  const cartItemCount = cart?.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <div className="relative">
       <button
@@ -69,7 +71,7 @@ export const CartWrapper: React.FC = () => {
             className="rounded-full text-white text-xs font-bold bg-error absolute w-6 h-6 flex aspect-square items-center justify-center -right-4 top-2"
             ref={cartCountRef}
           >
-            {cart.length}
+            {cartItemCount}
           </div>
         )}
       </button>
