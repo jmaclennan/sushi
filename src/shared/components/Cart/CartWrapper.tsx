@@ -50,7 +50,7 @@ export const CartWrapper: React.FC = () => {
 
   useEffect(() => {
     shake(cartCountRef.current);
-  }, [cart]);
+  }, [cart?.reduce((acc, item) => acc + item.quantity, 0)]);
 
   useOnClickOutside(menuContainerRef, handleClickOutside);
 
@@ -78,10 +78,10 @@ export const CartWrapper: React.FC = () => {
       {cartOpen && (
         <div
           className="absolute -right-5 md:-right-3 text-neutral-700"
-          style={{ top: `${HEADER_MIN_HEIGHT / 1.05}px` }}
+          style={{ top: `${HEADER_MIN_HEIGHT}px` }}
           ref={menuContainerRef}
         >
-          <BsFillTriangleFill className="absolute right-2 -top-[.5em] text-neutral-100 text-lg" />
+          <BsFillTriangleFill className="absolute right-[.55em] md:right-[.3em] -top-[.5em] text-neutral-100 text-lg" />
           <Cart />
         </div>
       )}

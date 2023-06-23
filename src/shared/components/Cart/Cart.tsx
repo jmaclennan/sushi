@@ -64,7 +64,7 @@ export const Cart: React.FC = () => {
   return (
     <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm w-[calc(100vw-23px)]  md:w-auto md:min-w-[450px] shadow-lg">
       <header className="border-b border-neutral-400 py-2 justify-between flex">
-        <span className="header font-bold">Your Order</span>
+        <span className="header font-bold">Your Pickup Order</span>
         {!!cart.length && (
           <button
             onClick={() => handleClear()}

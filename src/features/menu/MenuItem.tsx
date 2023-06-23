@@ -46,7 +46,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       >
         <div className="flex space-between w-full space-x-4">
           <div className="text-neutral-700 uppercase text-sm font-bold flex pt-1 items-start space-x-2 justify-start">
-            <CgAddR className="text-[20px] opacity-0 group-hover:opacity-100 text-success pt-1" />
+            <CgAddR className="text-[22px] opacity-0 group-hover:opacity-100 text-neutral-500" />
             <div className="flex">
               <span>{category}</span>
               <span>{id}</span>
