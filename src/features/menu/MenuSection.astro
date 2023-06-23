@@ -21,20 +21,19 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
         <Cart client:load />
         <!-- MENUBLOCK -->
         <div class="flex flex-col space-y-8">
-          <div class="p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
+          <div class="p-0 md:p-16 rounded-3xl shadow-2xl border-stone-300 bg-neutral-200 space-y-16">
             <div class="space-y-8">
               <div class="p-4 text-center text-sm bg-neutral-100 rounded">
                 <h3 class="heading heading-lg text-red-600">Teryaki Entree</h3>
                 <p class="inline-block">Served with miso soup / steamed rice</p>
               </div>
-
-              <div class="columns-1 md:columns-2 md:gap-16">
+              <ul class="list-none columns-1 md:columns-2 md:gap-16">
                 {teriyaki?.data.items.map((item) => (
-                  <div class="flex-nowrap break-inside-avoid">
+                  <div class="flex-nowrap break-inside-avoid  border-solid border-b border-neutral-300 border-b-1">
                     <MenuItem {...item} category="J" client:load/>
                   </div>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between items-center font-bold">
@@ -58,22 +57,22 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
                   <h4 class="heading heading-lg text-red-600">Katsu</h4>
                   <p>Served with miso soup / steamed rice & salad</p>
                 </div>
-                <div class="break-inside-avoid">
+                <ul class="break-inside-avoid list-none">
                   {katsu.data.items.map((item) => (
                     <MenuItem {...item} category="k" client:load/>
                   ))}
-                </div>
+                </ul>
               </div>
               <div class="col-span-12 md:col-span-6 space-y-8">
                 <div class="text-center text-sm bg-neutral-100 rounded p-4">
                   <h4 class="heading heading-lg text-red-600">Stir Fried Noodles</h4>
                   <p>Spicy or regular choice of udon/soba/ramen</p>
                 </div>
-                <div class="break-inside-avoid">
+                <ul class="break-inside-avoid list-none">
                   {noodles.data.items.map((item) => (
                     <MenuItem {...item} category="k" client:load />
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
           </div>
