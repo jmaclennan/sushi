@@ -1,10 +1,12 @@
+const tsParser = require('@typescript-eslint/parser');
+
 const rules = {
   // Warns if console.log is left in code. If you want to leave it permanently, use 'info'
   'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
 
   'react/jsx-filename-extension': 'off',
-  'react/jsx-props-no-spreading': 'off',
   'import/prefer-default-export': 'off',
+  'react/jsx-props-no-spreading': 'off',
 
   // Discourage reassigning parameters but allow for special cases
   'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['draft'] }],
@@ -62,6 +64,7 @@ const rules = {
 
   // Nameless functions are okay
   'func-names': 'off',
+
   'no-unused-vars': 'warn',
   'import/no-unresolved': ['off'],
   'import/extensions': 'off',
@@ -70,7 +73,6 @@ const rules = {
 };
 
 module.exports = {
-  // ...
   settings: {
     'import/resolver': {
       typescript: {
@@ -83,16 +85,23 @@ module.exports = {
   // ...
   overrides: [
     {
-      // Define the configuration for `.astro` file.
-      files: ['*.astro'],
-      // Allows Astro components to be parsed.
-      parser: 'astro-eslint-parser',
-      // Parse the script in `.astro` as TypeScript by adding the following configuration.
-      // It's the setting you need when using TypeScript.
+      parser: tsParser,
       parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
+        // ...
+        project: 'path/to/your/tsconfig.json',
+        extraFileExtensions: ['.astro'], // This is a required setting in `@typescript-eslint/parser` v5.
       },
+      overrides: [
+        {
+          files: ['*.astro'],
+          parser: 'astro-eslint-parser',
+          // Parse the script in `.astro` as TypeScript by adding the following configuration.
+          parserOptions: {
+            parser: '@typescript-eslint/parser',
+          },
+        },
+        // ...
+      ],
       rules: {
         ...rules,
       },

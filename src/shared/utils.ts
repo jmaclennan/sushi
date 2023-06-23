@@ -24,3 +24,7 @@ export function convertTime(time: number | string): string {
     return `${t - 12}:00PM`;
   }
 }
+
+export function formatPrice(price: number): string {
+  return `$${price.toFixed(2)}`;
+}

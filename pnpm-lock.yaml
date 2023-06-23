@@ -16,6 +16,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^3.1.3
     version: 3.1.3(astro@2.7.0)(tailwindcss@3.3.2)
+  '@astrojs/ts-plugin':
+    specifier: ^1.0.10
+    version: 1.0.10
   '@fontsource/open-sans':
     specifier: ^4.5.14
     version: 4.5.14
@@ -55,6 +58,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.45.0
     version: 7.45.0(react@18.2.0)
+  react-icons:
+    specifier: ^4.10.1
+    version: 4.10.1(react@18.2.0)
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
@@ -67,6 +73,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
+  usehooks-ts:
+    specifier: ^2.9.1
+    version: 2.9.1(react-dom@18.2.0)(react@18.2.0)
   zod:
     specifier: ^3.21.4
     version: 3.21.4
@@ -289,6 +298,13 @@ packages:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@astrojs/ts-plugin@1.0.10:
+    resolution: {integrity: sha512-HLEIkVRYfL1FbHvdNXbPQLloUBHZpiYCSuwEQNyLM14TXX21JtqIVF9snHcs2qPge/XHgFnGh2V/1qvLPdRi7g==}
+    dependencies:
+      '@astrojs/compiler': 1.5.1
+      '@jridgewell/trace-mapping': 0.3.18
     dev: false
 
   /@astrojs/webapi@2.2.0:
@@ -4813,6 +4829,14 @@ packages:
       react: 18.2.0
     dev: false
 
+  /react-icons@4.10.1(react@18.2.0):
+    resolution: {integrity: sha512-/ngzDP/77tlCfqthiiGNZeYFACw85fUjZtLbedmJ5DTlNDIwETxhwBzdOJ21zj4iJdvc0J3y7yOsX3PpxAJzrw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -5735,6 +5759,17 @@ packages:
     dependencies:
       punycode: 2.3.0
     dev: true
+
+  /usehooks-ts@2.9.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-2FAuSIGHlY+apM9FVlj8/oNhd+1y+Uwv5QNkMQz1oSfdHk4PXo1qoCw9I5M7j0vpH8CSWFJwXbVPeYDjLCx9PA==}
+    engines: {node: '>=16.15.0', npm: '>=8'}
+    peerDependencies:
+      react: ^16.8.0  || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
