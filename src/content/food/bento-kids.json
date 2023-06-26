@@ -1,0 +1,31 @@
+{
+  "category": "jb",
+  "items": [
+    {
+      "id": 10,
+      "name": "Chicken Teriyaki",
+      "price": 12
+    },
+    {
+      "id": 11,
+      "name": "Beef Teriyaki",
+      "price": 13,
+      "spicy": true
+    },
+    {
+      "id": 12,
+      "name": "Shrimp Teriyaki",
+      "price": 14
+    },
+    {
+      "id": 13,
+      "name": "Salmon Teriyaki",
+      "price": 14
+    },
+    {
+      "id": 14,
+      "name": "Chicken Katsu",
+      "price": 13
+    }
+  ]
+}

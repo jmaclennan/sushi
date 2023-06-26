@@ -29,12 +29,14 @@
     {
       "id": 6,
       "name": "Spicy Pork (marinated)",
-      "price": 19
+      "price": 19,
+      "spicy": true
     },
     {
       "id": 7,
       "name": "Spicy Chicken (marinated)",
-      "price": 19
+      "price": 19,
+      "spicy": true
     },
     {
       "id": 8,

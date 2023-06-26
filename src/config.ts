@@ -34,6 +34,37 @@ export const nav: NavItem[] = [
   },
 ]
 
+export const hours: { days: string, hours: string }[] = [
+  {
+    days: "Monday" ,
+    hours: "11 AM - 9 PM",
+  },
+  {
+    days: "Tuesday" ,
+    hours: "11 AM - 9 PM",
+  },
+  {
+    days: "Wednesday" ,
+    hours: "11 AM - 10 PM",
+  },
+  {
+    days: "Thursday" ,
+    hours: "11 AM - 10 PM",
+  },
+  {
+    days: "Friday" ,
+    hours: "11 AM - 10 PM",
+  },
+  {
+    days: "Saturday" ,
+    hours: "11 AM - 10 PM",
+  },
+  {
+    days: "Sunday" ,
+    hours: "11 AM - 9 PM",
+  },
+]
+
 
 export const config = {
   name,
@@ -43,4 +74,5 @@ export const config = {
   address,
   socials,
   nav,
+  hours,
 }

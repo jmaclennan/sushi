@@ -9,7 +9,7 @@ const fontFamily = {
 
 const fontSize = {
   xs: ['.75rem', { lineHeight: '1rem' }],
-  sm: ['1rem', { lineHeight: '1.6rem' }],
+  sm: ['1.2rem', { lineHeight: '1.6rem' }],
   base: ['1.35rem', { lineHeight: '1.85rem' }],
   lg: ['2rem', { lineHeight: '2.5rem' }],
   xl: ['2.75rem', { lineHeight: '3.125rem' }],

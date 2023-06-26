@@ -1,0 +1,14 @@
+---
+import { string } from 'zod';
+type Props = {
+  title: string;
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<div class="p-4 text-center text-sm bg-neutral-100 rounded break-inside-avoid">
+  <h3 class="heading heading-xl font-heading-secondary text-red-600">{title}</h3>
+  <p class="inline-block text-sm">{description}</p>
+</div>
