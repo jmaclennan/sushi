@@ -8,30 +8,30 @@ import { Image } from '@astrojs/image/components';
 ---
 
 <section class="max-w-full relative overflow-hidden h-screen flex items-center justify-center">
-  <video muted autoplay loop playsinline class="absolute object-right lg:object-center min-w-screen mx-auto top-0 bottom-0 aspect-video object-cover min-h-[100vh] min-w-[100%] opacity-0" id="bg-video">
+  <video muted autoplay loop playsinline class="absolute lg:object-center min-w-screen mx-auto top-0 bottom-0 aspect-video object-cover object-center min-h-[100vh] min-w-[100%] opacity-0 z-10 " id="bg-video">
     <source src="/hero-bg.mp4" type="video/mp4" />
   </video>
-  <div class="w-full h-full min-h-[100vh] bg-black/70 absolute" />
-  <HeroContainer class="min-h-[80vh]">
-    <Container>
-      <div class="grid grid-cols-12 text-white lg:flex-row justify-between relative w-full max-w-screen-2xl">
-        <div class="col-span-10 col-start-2 flex flex-col flex-grow justify-center space-y-4 -mt-[5vh] lg:-mt-[5vh] items-center">
-          <Image src="/logo.webp" width={200} height={200} aspectRatio={1} class="opacity-0 w-[200px] md:w-[450px]" id="logo" alt={config.name} />
-          <div class="flex flex-col opacity-0 heading  text-white max-w-4xl text-center space-y-4 font-sans" id="heading"><span>Beaumont, AB</span>  <span>{formatPhoneNumber(config.phone)}</span> </div>
-          <div class="flex flex-col py-16 text-center space-y-4">
+  <div class="w-full h-full min-h-[100vh] bg-black/70 absolute z-20" />
+  <HeroContainer class="min-h-[80vh] relative z-40">
+    <!-- <Container> -->
+      <div class="grid grid-cols-12 text-white justify-between relative w-full md:max-w-screen-2xl">
+        <div class="col-span-12 md:col-span-10 md:col-start-2 flex flex-col flex-grow space-y-4 -mt-[5vh] lg:-mt-[5vh] ">
+          <Image src="/logo.webp" width={200} height={200} aspectRatio={1} class="opacity-0 w-[80vw] md:w-[450px]" id="logo" alt={config.name} />
+          <div class="flex flex-col md:flex-row opacity-0 heading text-white max-w-4xl text-center space-y-2 md:space-y-0 font-sans justify-center md:space-x-4" id="heading"><span>Beaumont, AB</span> <span class="hidden md:block">-</span> <a href={`tel:${config.phone}`}>{formatPhoneNumber(config.phone)}</a> </div>
+          <!-- <div class="flex flex-col pt-8 md:pt-0 md:py-16 text-center space-y-4 text-red-500 italic">
             <span class="opacity-0 heading text-[4vh] leading-[4vh] lg:text-[5vh] lg:leading-[7vh] xl:text-lg xl:leading-none text-primary-500 text-scroll" id="sub-heading">It's gotta be good!</span>
-            <div class="heading text-[4vh] leading-[4vh] lg:text-[5vh] lg:leading-[7vh] xl:text-lg xl:leading-none text-primary-500 flex space-x-4">
+            <div class="heading text-[4vh] leading-[4vh] lg:text-[5vh] lg:leading-[7vh] xl:text-lg xl:leading-none text-primary-500 flex md:space-x-4 flex-col md:flex-row text-neutral-400">
               <span class="inline-block js-slogan-stagger opacity-0">The <strong>people</strong>.</span>
               <span class="inline-block js-slogan-stagger opacity-0">The <strong>place</strong>.</span>
               <span class="inline-block js-slogan-stagger opacity-0">The <strong>food</strong>.</span>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
-    </Container>
+    <!-- </Container> -->
     
   </HeroContainer>
-  <div class="bg-gradient-to-t from-black from-10% to-transparent w-full absolute bottom-0 h-64 flex items-end justify-center absolute">
+  <div class="bg-gradient-to-t from-black from-10% to-transparent w-full absolute bottom-0 h-64 flex items-end justify-center z-30">
     <Icon name="ion:chevron-down" class="w-[80px] animate-bounce lg:mb-16 opacity-0" id="scroll-cta"/>
   </div>
 </section>
@@ -55,8 +55,8 @@ import { Image } from '@astrojs/image/components';
   .fromTo(logo, {opacity: 0, y: 25},{ duration: .75, opacity: 1, y:0, ease: 'power2.out'})
   .fromTo(heading, {opacity: 0, y: 25},{ duration: .75, opacity: 1, y:0, ease: 'power2.out'})
   .fromTo(subHeading, {opacity: 0, y: 25},{ duration: 1, opacity: 1, y:0, ease: 'power2.out'})
-  .fromTo(subSection, {y: hasScrolled ? 0 : '40vh'},{ duration: .75, y:0, ease: 'power4.out'}, "-=.75")
-  .fromTo('.js-slogan-stagger', {opacity: 0, y: 10}, { stagger: .5, duration: .75, opacity: 1, y: 0, ease: 'power4.out'})
+  // .fromTo(subSection, {y: hasScrolled ? 0 : '40vh'},{ duration: .75, y:0, ease: 'power4.out'}, "-=.85")
+  // .fromTo('.js-slogan-stagger', {opacity: 0, y: 10}, { stagger: .5, duration: .75, opacity: 1, y: 0, ease: 'power4.out'})
   .fromTo(scrollCta, {opacity: 0},{ duration: .75, opacity: 1, ease: 'power4.out'}, "+=1")
 
 

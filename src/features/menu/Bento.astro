@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import MenuContainer from "./MenuContainer.astro";
 import { Image } from '@astrojs/image/components';
 import Food from '@/assets/images/sushi-1.webp';
+import Food2 from '@/assets/images/oishii-placeholder-2.jpg';
 import { MenuItem } from "./MenuItem";
 import MenuSectionTitle from "./MenuSectionTitle.astro";
 
@@ -28,7 +29,7 @@ const bentoKids = food.filter((item) => String(item.id) === 'bento-kids')[0];
         <div class="text-sm">X1 - Placeholder</div>
       </div>
       <div class="col-span-12 md:col-span-4 font-bold lg:order-none flex justify-center flex-col items-center md:justify-start space-y-4 px-8 md:px-0 py-8 md:py-0">
-        <Image src={Food} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+        <Image src={Food2} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
         <div class="text-sm">X1 - Placeholder</div>
       </div>
       <div class="col-span-12 md:col-span-4 font-bold lg:order-none flex justify-center flex-col items-center md:justify-start space-y-4 px-8 md:px-0 pb-8 md:py-0">
@@ -45,8 +46,8 @@ const bentoKids = food.filter((item) => String(item.id) === 'bento-kids')[0];
         </ul>
       </div>
 
-      <div class="col-span-12 md:col-span-5 font-bold lg:order-none flex justify-center flex-col items-center md:justify-center space-y-4 px-8 md:px-0 pb-8 md:py-0">
-        <Image src={Food} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+      <div class="col-span-12 md:col-span-4 lg:col-span-5 font-bold lg:order-none flex justify-center flex-col items-center md:justify-center space-y-4 px-8 md:px-0 pb-8 md:py-0">
+        <Image src={Food2} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
         <div class="text-sm">X1 - Placeholder</div>
       </div>
 

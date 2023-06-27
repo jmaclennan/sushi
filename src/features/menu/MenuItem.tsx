@@ -95,7 +95,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
                 </span>
               </div>
             </div>
-            {description && <span className="text-sm">{description}</span>}
+            {description && (
+              <span className="text-sm italic">{description}</span>
+            )}
           </div>
           <div className="text-neutral-600 whitespace-nowrap text-right flex-grow flex justify-end">
             <span>$</span>
