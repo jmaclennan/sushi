@@ -53,8 +53,8 @@ export const MenuItem: React.FC<MenuItemProps> = ({
       y: -0,
       duration: 0.25,
       rotate: 90,
-      scale: 1.15,
-      ease: "power2.in",
+      scale: 1.5,
+      ease: "ease.in",
     })
       .to(el, {
         y: 0,
@@ -87,8 +87,12 @@ export const MenuItem: React.FC<MenuItemProps> = ({
           <div className="flex flex-col">
             <div className="flex ">
               <div className="text-stone-600 flex space-x-2 items-center">
-                <span>{name}</span>{" "}
-                {spicy && <FaPepperHot className="text-error text-[18px]" />}
+                <span>
+                  {name}{" "}
+                  {spicy && (
+                    <FaPepperHot className="text-error text-[18px] inline -translate-y-1" />
+                  )}
+                </span>
               </div>
             </div>
             {description && <span className="text-sm">{description}</span>}

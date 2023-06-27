@@ -12,7 +12,7 @@ const bentoKids = food.filter((item) => String(item.id) === 'bento-kids')[0];
 ---
 
 <MenuContainer>
-  <div class="space-y-8">
+  <div class="md:space-y-8">
     <MenuSectionTitle title="Bento Boxes" description="Served with miso soup, salad, steamed rice, dynamite roll (4 pcs), assorted tempura & fruit or desserts"/>
     <ul class="list-none columns-1 md:columns-2 md:gap-8 lg:gap-12">
       {bento?.data.items.map((item) => (
@@ -36,21 +36,21 @@ const bentoKids = food.filter((item) => String(item.id) === 'bento-kids')[0];
     </div>
   </div>
 
-  <div class="grid grid-cols-12 md:gap-8 lg:gap-12 text-center ">
-    <div class="col-span-12 lg:col-span-3 font-bold space-y-2">
-      <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
+  <div class="grid grid-cols-12 md:gap-8 lg:gap-12 text-center gap-4 ">
+    <div class="col-span-12 md:col-span-6 md:row-span-2 lg:col-span-3 font-bold space-y-2 order-2 row-span-2 lg:order-none flex justify-center flex-col items-center md:justify-start">
+      <Image src={Food} alt="Food" class="  border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
       <div class="text-sm">X1 - Placeholder</div>
     </div>
-    <div class="col-span-12 lg:col-span-6 md:col-span-6 space-y-8">
-      <MenuSectionTitle title="Kids Bento Meals" description="Servied with steamed rice, dumplings, tempura & fruit or desserts. For kids aged 10 and under."/>
+    <div class="col-span-12 lg:col-span-6 md:col-start-3 md:col-span-8 md:space-y-8 order-1 lg:order-none">
+      <MenuSectionTitle title="Kids Bento Meals" description="Served with steamed rice, dumplings, tempura & fruit or desserts. For kids aged 10 and under."/>
       <ul class="list-none">
         {bentoKids.data.items.map((item) => (
           <MenuItem {...item} category={bentoKids.data.category} client:only/>
         ))}
       </ul>
     </div>
-    <div class="col-span-12 lg:col-span-3 font-bold space-y-2">
-      <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
+    <div class="col-span-12 md:col-span-6 md:row-span-2 lg:col-span-3 font-bold space-y-2 order-3 row-span-2 lg:order-none flex justify-center flex-col items-center md:justify-start">
+      <Image src={Food} alt="Food" class="border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
       <div class="text-sm">X1 - Placeholder</div>
     </div>
   </div>

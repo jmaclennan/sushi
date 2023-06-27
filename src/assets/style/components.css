@@ -13,7 +13,7 @@
     @apply text-lg;
   }
   .heading-xl {
-    @apply text-lg lg:text-xl;
+    @apply text-xl lg:text-xl;
   }
   .heading-2xl {
     @apply text-xl lg:text-2xl;
