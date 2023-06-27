@@ -13,46 +13,46 @@ const noodles = food.filter((item) => String(item.id) === 'noodles')[0];
 ---
 
 <MenuContainer>
-  <div class="md:space-y-8">
+  <div>
     <MenuSectionTitle title="Teriyaki Entree" description="Served with miso soup / steamed rice"/>
-    <ul class="list-none columns-1 md:columns-2 md:gap-8 lg:gap-12">
-      {teriyaki?.data.items.map((item) => (
-        <MenuItem {...item} category="J" client:only />
-      ))}
-    </ul>
-  </div>
+    <div class="grid grid-cols-12 md:gap-8">
+      <div class="col-span-12">
+        <ul class="list-none columns-1 md:columns-2 md:gap-8 lg:gap-12 py-0 md:pt-8">
+          {teriyaki?.data.items.map((item) => (
+            <MenuItem {...item} category="J" client:only />
+          ))}
+        </ul>
+      </div>
 
-  <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between items-center font-bold md:space-x-8">
-    <div class="flex flex-col justify-center items-center space-y-2 text-sm">
-      <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
-      <span>X1 - Placeholder</span>
-    </div>
-    <div class="flex flex-col justify-center items-center space-y-2 text-sm">
-      <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
-      <span>X1 - Placeholder</span>
-    </div>
-    <div class="flex flex-col justify-center items-center space-y-2 text-sm">
-      <Image src={Food} alt="Food" class=" w-[200px] md:w-[300px] border-8 border-white shadow-md" position="center" aspectRatio={4 / 3} width={400} />
-      <span>X1 - Placeholder</span>
-    </div>
-  </div>
+      <div class="flex flex-col justify-center items-center col-span-12 md:col-span-4 font-bold lg:order-none md:justify-start space-y-4 px-8 md:px-0 pt-8 md:pt-0">
+        <Image src={Food} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+        <div class="text-sm">X1 - Placeholder</div>
+      </div>
+      <div class="col-span-12 md:col-span-4 font-bold lg:order-none flex justify-center flex-col items-center md:justify-start space-y-4 px-8 md:px-0 py-8 md:py-0">
+        <Image src={Food} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+        <div class="text-sm">X1 - Placeholder</div>
+      </div>
+      <div class="col-span-12 md:col-span-4 font-bold lg:order-none flex justify-center flex-col items-center md:justify-start space-y-4 px-8 md:px-0 pb-8 md:py-0">
+        <Image src={Food} alt="Food" class="border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+        <div class="text-sm">X1 - Placeholder</div>
+      </div>
 
-  <div class="columns-1 md:columns-2 md:gap-8 lg:gap-12">
-    <div class="col-span-12 md:col-span-6 md:space-y-8">
-      <MenuSectionTitle title="Katsu" description="Served with miso soup / steamed rice & salad"/>
-      <ul class="list-none">
-        {katsu.data.items.map((item) => (
-          <MenuItem {...item} category={katsu.data.category} client:only/>
-        ))}
-      </ul>
-    </div>
-    <div class="col-span-12 md:col-span-6 md:space-y-8">
-      <MenuSectionTitle title="Noodles" description="Spicy or regular choice of udon / soba / ramen"/>
-      <ul class="list-none">
-        {noodles.data.items.map((item) => (
-          <MenuItem {...item} category={noodles.data.category} client:only />
-        ))}
-      </ul>
+      <div class="col-span-12 md:col-span-6 md:space-y-8">
+        <MenuSectionTitle title="Katsu" description="Served with miso soup / steamed rice & salad"/>
+        <ul class="list-none">
+          {katsu.data.items.map((item) => (
+            <MenuItem {...item} category={katsu.data.category} client:only/>
+          ))}
+        </ul>
+      </div>
+      <div class="col-span-12 md:col-span-6 md:space-y-8">
+        <MenuSectionTitle title="Noodles" description="Spicy or regular choice of udon / soba / ramen"/>
+        <ul class="list-none">
+          {noodles.data.items.map((item) => (
+            <MenuItem {...item} category={noodles.data.category} client:only />
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 </MenuContainer>
