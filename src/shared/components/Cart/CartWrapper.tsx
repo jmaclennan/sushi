@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
 import { TfiReceipt } from "react-icons/tfi";
 import { Cart, CartItem } from "./Cart";
 import { HEADER_MIN_HEIGHT } from "../Header.astro";
 import { BsFillTriangleFill } from "react-icons/bs";
 import { useReadLocalStorage, useOnClickOutside } from "usehooks-ts";
 import { gsap } from "gsap";
+import React, { useEffect, useRef } from "react";
 
 const shake = (el: HTMLElement | null) => {
   if (!el) return;
@@ -34,9 +34,9 @@ const shake = (el: HTMLElement | null) => {
 export const CartWrapper: React.FC = () => {
   const [cartOpen, setCartOpen] = React.useState(false);
   const cart = useReadLocalStorage<CartItem[]>("cart");
-  const menuContainerRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
-  const cartCountRef = useRef<HTMLDivElement>(null);
+  const menuContainerRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const cartCountRef = React.useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (!menuContainerRef.current || !triggerRef.current || !cartOpen) return;

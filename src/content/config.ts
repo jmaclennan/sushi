@@ -12,6 +12,7 @@ const foodCollection = defineCollection({
       spicy: z.optional(z.boolean()),
       image: z.optional(z.string()),
       price: z.number(),
+      altPrice: z.optional(z.number()),
     })),
   }),
 });

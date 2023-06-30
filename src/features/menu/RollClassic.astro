@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import MenuContainer from "./MenuContainer.astro";
+import { Image } from '@astrojs/image/components';
+import { MenuItemTableRow } from "./MenuItemTableRow";
+import MenuSectionTitle from "./MenuSectionTitle.astro";
+import Placeholder3 from '@/assets/images/oishii-placeholder-3.jpg';
+import { MenuItem } from "./MenuItem";
+
+const food = await getCollection('food');
+const rollClassic = food.filter((item) => String(item.id) === 'rolls-classic')[0];
+---
+
+<MenuContainer>
+  <div class="relative">
+    <MenuSectionTitle title="Classic Rolls" description="Available in rice or soy bean paper and brown rice" classes="relative z-20" />
+    <div class="max-w-full md:max-w-none overflow-scroll md:overflow-auto">
+      <div class="absolute top-0 right-0 w-1/5 h-full bg-gradient-to-l from-neutral-200 to-transparent pointer-events-none z-10 md:hidden"></div>
+      <div class="grid grid-cols-12 md:gap-8 max-w-full min-w-[500px]">
+        
+        <!-- <div class="flex md:flex-col md:col-span-2 md:space-y-4 md:items-center md:justify-center md:py-8 text-xs font-bold">
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+        </div> -->
+        
+        <div class="col-span-12 md:col-span-8 md:space-x-4 flex flex-col">
+          <div class="flex justify-end pr-8 md:space-x-4 text-center font-bold text-sm py-2">
+            <div class="w-[90px] pl-8">Roll</div>
+            <div class="w-[90px]">Cone</div>
+          </div>
+          <ul class="list-none">
+            {rollClassic?.data.items.map((item) => (
+              <MenuItem {...item} category={rollClassic.data.category} altPriceCategory client:only="react" />
+            ))}
+          </ul>
+        </div>
+
+        <!-- <div class="flex md:flex-col md:col-span-2 md:space-y-4 md:items-center md:justify-center md:py-8 text-xs font-bold">
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div>
+          <div class="flex flex-col items-center space-y-2">
+            <div class="aspect-square border-[10px] border-white">
+              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+            </div>
+            <span>X1 - Placeholder</span>
+          </div> -->
+  
+        </div>
+
+        
+        
+      </div>
+  </div>
+    
+    
+    
+  </div>
+
+
+    
+</MenuContainer>

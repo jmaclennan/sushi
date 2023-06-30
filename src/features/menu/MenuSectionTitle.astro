@@ -1,14 +1,16 @@
 ---
+import { twMerge } from 'tailwind-merge';
 import { string } from 'zod';
 type Props = {
   title: string;
-  description: string
+  description: string;
+  classes?: string
 }
 
-const { title, description } = Astro.props
+const { title, description, classes } = Astro.props
 ---
 
-<div class="p-4 text-center text-sm bg-neutral-100 rounded break-inside-avoid">
+<div class={twMerge(`p-4 text-center text-sm bg-neutral-100 rounded break-inside-avoid w-full`, classes)}>
   <h3 class="heading heading-xl font-heading-secondary text-red-600">{title}</h3>
   <p class="inline-block text-sm">{description}</p>
 </div>

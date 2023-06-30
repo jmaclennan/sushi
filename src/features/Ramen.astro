@@ -25,9 +25,11 @@ const ramenItems: RamenItem[] = [
     image: Seafood,
   },
 ]
+
+export const ramenColor = '#ffebb3'
 ---
 
-<section class="section py-16 bg-[#ffebb3] relative z-20 js-ramen-section">
+<section class={`section py-16 relative z-20 js-ramen-section`} style={{backgroundColor: ramenColor}}>
   <div class="bg-gradient-to-b from-neutral-100 -from-50% to-transparent w-full top-0 h-[50vh] flex items-end justify-center absolute z-10">
     <Icon name="ion:chevron-down" class="w-[80px] animate-bounce lg:mb-16 opacity-0" id="scroll-cta"/>
   </div>

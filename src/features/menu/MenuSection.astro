@@ -1,22 +1,21 @@
 ---
 import Container from '@/components/Container.astro';
 import ContentBlock from '@/components/ContentBlock.astro';
-import { Image } from '@astrojs/image/components';
-import Wave from '@/assets/images/wave.svg'
 import Teriyaki from './Teriyaki.astro';
 import Bento from './Bento.astro';
-
-
+import Wave from '@/components/Wave.astro';
+import RollClassic from './RollClassic.astro';
 
 ---
-
-  <section class="section pt-0 9bg-red-900 bg-red-800 bg-[url('/seigaiha.svg')] -mt-[7vw] relative z-10">
-    <Image src={Wave} alt="" class="w-full -scale-x-100" />
+  <section class="section py-0 9bg-red-900 bg-red-800 bg-[url('/seigaiha.svg')] -mt-[7vw] -mb-[7vw] relative z-10">
+    <Wave color="#ffebb3" classes="-scale-x-100 "/>
     <Container>
       <ContentBlock classes="space-y-16">
         <h2 class="heading heading-xl text-white font-heading text-2xl">Menu</h2>
         <Teriyaki />
         <Bento />
+        <RollClassic />
       </ContentBlock>
     </Container>
+    <Wave color="#262626" classes="-scale-y-100 mt-[7vw]"></Wave>
   </section>
