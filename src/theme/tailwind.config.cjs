@@ -14,6 +14,8 @@ module.exports = {
         success: theme.colors.green[700],
         "bg-primary": theme.colors.red[800],
         "bg-secondary": theme.colors.neutral[700],
+        primary: theme.colors.red,
+        secondary: theme.colors.neutral,
         // ...themeColors
       }),
       maxWidth: {

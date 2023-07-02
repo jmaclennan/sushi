@@ -15,7 +15,7 @@ type MenuItemProps = {
   spicy?: boolean;
   category: string;
   altPrice?: number;
-  altPriceCategory: boolean;
+  altPriceCategory?: boolean;
 };
 
 export const MenuItem: React.FC<MenuItemProps> = ({
@@ -33,7 +33,6 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 
   const handleClick = () => {
     if (itemRef.current) {
-      console.log("activating");
       activate(itemRef.current);
     }
     // if item already exists in cart, increment quantity
@@ -53,7 +52,6 @@ export const MenuItem: React.FC<MenuItemProps> = ({
 
   const activate = (el: HTMLDivElement) => {
     const tl = gsap.timeline();
-
     tl.to(el, {
       y: -0,
       duration: 0.25,
@@ -74,17 +72,14 @@ export const MenuItem: React.FC<MenuItemProps> = ({
   };
 
   return (
-    <li className="flex-nowrap break-inside-avoid border-solid border-b border-neutral-300 border-b-1">
-      <div
-        className="w-full py-4 md:py-2 cursor-pointer hover:bg-neutral-100/50 group px-2 pr-8"
-        onClick={handleClick}
-      >
-        <div className="flex w-full space-x-4">
-          <div className="text-neutral-700 uppercase text-sm font-bold flex justify-start items-start min-w-[60px] space-x-2">
-            <div ref={itemRef}>
-              <CgAddR className="text-[22px] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-250 text-neutral-500" />
+    <li className="flex-nowrap break-inside-avoid border-solid border-b border-neutral-300 border-b-1 px-2 md:px-0">
+      <div className="w-full py-4 md:py-2 group px-2 pr-0 text-sm">
+        <div className="flex w-full">
+          <div className="text-neutral-700 uppercase font-bold flex justify-start items-start min-w-[60px] space-x-2">
+            <div ref={itemRef} onClick={handleClick} className="-mt-[0.05em]">
+              <CgAddR className="text-[28px] opacity-50 hover:opacity-100 hover:text-neutral-700 transition-all duration-250 text-neutral-500 cursor-pointer" />
             </div>
-            <div className="flex">
+            <div className="flex pr-2 text-neutral-600 font-semibold">
               <span>{category}</span>
               <span>{id}</span>
             </div>

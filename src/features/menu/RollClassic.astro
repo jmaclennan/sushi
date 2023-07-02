@@ -1,11 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import MenuContainer from "./MenuContainer.astro";
-import { Image } from '@astrojs/image/components';
-import { MenuItemTableRow } from "./MenuItemTableRow";
 import MenuSectionTitle from "./MenuSectionTitle.astro";
-import Placeholder3 from '@/assets/images/oishii-placeholder-3.jpg';
 import { MenuItem } from "./MenuItem";
+import { Image } from '@astrojs/image/components'
+import Food3 from '@/assets/images/oishii-placeholder-3.jpg';
 
 const food = await getCollection('food');
 const rollClassic = food.filter((item) => String(item.id) === 'rolls-classic')[0];
@@ -21,7 +20,7 @@ const rollClassic = food.filter((item) => String(item.id) === 'rolls-classic')[0
         <!-- <div class="flex md:flex-col md:col-span-2 md:space-y-4 md:items-center md:justify-center md:py-8 text-xs font-bold">
           <div class="flex flex-col items-center space-y-2">
             <div class="aspect-square border-[10px] border-white">
-              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
             </div>
             <span>X1 - Placeholder</span>
           </div>
@@ -45,8 +44,8 @@ const rollClassic = food.filter((item) => String(item.id) === 'rolls-classic')[0
           </div>
         </div> -->
         
-        <div class="col-span-12 md:col-span-8 md:space-x-4 flex flex-col">
-          <div class="flex justify-end pr-8 md:space-x-4 text-center font-bold text-sm py-2">
+        <div class="col-span-12 md:col-span-8 flex flex-col">
+          <div class="flex justify-end md:space-x-4 text-center font-bold text-sm py-2 mt-2">
             <div class="w-[90px] pl-8">Roll</div>
             <div class="w-[90px]">Cone</div>
           </div>
@@ -57,31 +56,19 @@ const rollClassic = food.filter((item) => String(item.id) === 'rolls-classic')[0
           </ul>
         </div>
 
-        <!-- <div class="flex md:flex-col md:col-span-2 md:space-y-4 md:items-center md:justify-center md:py-8 text-xs font-bold">
+        <div class="flex md:flex-col col-span-12 md:col-span-4 md:space-y-4 md:items-center md:justify-center md:py-8 text-xs font-bold px-4 pt-8 space-x-8 md:space-x-0">
           <div class="flex flex-col items-center space-y-2">
             <div class="aspect-square border-[10px] border-white">
-              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
             </div>
             <span>X1 - Placeholder</span>
           </div>
           <div class="flex flex-col items-center space-y-2">
             <div class="aspect-square border-[10px] border-white">
-              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
+              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
             </div>
             <span>X1 - Placeholder</span>
           </div>
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Placeholder3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div> -->
   
         </div>
 
