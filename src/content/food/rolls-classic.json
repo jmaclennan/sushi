@@ -76,6 +76,107 @@
       "price": 9,
       "altPrice": 4,
       "spicy": true
+    },
+    {
+      "id": 13,
+      "name": "Tuna Roll",
+      "price": 10,
+      "altPrice": 4
+    },
+    {
+      "id": 14,
+      "name": "Chicken Roll",
+      "price": 10
+    },
+    {
+      "id": 15,
+      "name": "Beef Roll",
+      "price": 10
+    },
+    {
+      "id": 16,
+      "name": "Spicy Tuna Roll",
+      "price": 10,
+      "altPrice": 4,
+      "spicy": true
+    },
+    {
+      "id": 17,
+      "name": "Salmon & Cream Cheese Roll",
+      "price": 9,
+      "altPrice": 4
+    },
+    {
+      "id": 18,
+      "name": "Tuna & Cream Cheese Roll",
+      "price": 10
+    },
+    {
+      "id": 19,
+      "name": "Spicy California Roll",
+      "price": 8,
+      "altPrice": 4,
+      "spicy": true
+    },
+    {
+      "id": 20,
+      "name": "Spicy Crab Roll",
+      "price": 8,
+      "altPrice": 4,
+      "spicy": true
+    },
+    {
+      "id": 21,
+      "name": "Crazy Boy",
+      "price": 8,
+      "description": "Deep fried California roll"
+    },
+    {
+      "id": 22,
+      "name": "Crazy Girl",
+      "price": 9,
+      "description": "deep fried roll w/ avocado, cucumber, cream cheese, jalapeno, crab and sauce"
+    },
+    {
+      "id": 23,
+      "name": "Chopped Scallop Roll",
+      "price": 9
+    },
+    {
+      "id": 23,
+      "name": "Spicy Chopped Scallop Roll",
+      "price": 9,
+      "spicy": true
+    },
+    {
+      "id": 24,
+      "name": "Negi Toro Roll",
+      "price": 12,
+      "description": "Minced tuna and green onion"
+    },
+    {
+      "id": 25,
+      "name": "Negi Hamachi Roll",
+      "price": 12,
+      "description": "Yellow tail fish & green onion"
+    },
+    {
+      "id": 26,
+      "name": "BC Roll",
+      "price": 8,
+      "description": "Deep fried salmon skin, cucumber & green onion"
+    },
+    {
+      "id": 27,
+      "name": "Mango Roll",
+      "price": 10,
+      "description": "Avocado, cucumber, deep friend shimp topped with mango"
+    },
+    {
+      "id": 28,
+      "name": "Real Crab Roll",
+      "price": 12,
+      "description": "Marinated crab, fish egg"
     }
   ]
 }

@@ -75,11 +75,11 @@ export const MenuItem: React.FC<MenuItemProps> = ({
     <li className="flex-nowrap break-inside-avoid border-solid border-b border-neutral-300 border-b-1 px-2 md:px-0">
       <div className="w-full py-4 md:py-2 group px-2 pr-0 text-sm">
         <div className="flex w-full">
-          <div className="text-neutral-700 uppercase font-bold flex justify-start items-start min-w-[60px] space-x-2">
+          <div className="text-neutral-700 uppercase font-bold flex justify-start items-start space-x-2 pr-3">
             <div ref={itemRef} onClick={handleClick} className="-mt-[0.05em]">
               <CgAddR className="text-[28px] opacity-50 hover:opacity-100 hover:text-neutral-700 transition-all duration-250 text-neutral-500 cursor-pointer" />
             </div>
-            <div className="flex pr-2 text-neutral-600 font-semibold">
+            <div className="flex text-neutral-600 font-semibold ">
               <span>{category}</span>
               <span>{id}</span>
             </div>
