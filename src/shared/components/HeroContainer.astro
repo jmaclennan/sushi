@@ -1,4 +1,5 @@
 ---
+import { twMerge } from "tailwind-merge";
 const { class: childClass } = Astro.props
 ---
-<div class={`min-safe-h-screen flex flex-col items-center justify-center relative ${childClass}`}><slot /></div>
+<div class={twMerge(`min-safe-h-screen flex flex-col items-center justify-center relative`, childClass)}><slot /></div>

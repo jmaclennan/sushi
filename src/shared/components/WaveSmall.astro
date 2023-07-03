@@ -1,0 +1,15 @@
+---
+type Props = {
+  color: string;
+  classes?: string;
+  id?: string;
+}
+
+const { color, classes, id } = Astro.props;
+---
+<div class={classes} id={id}>
+  <svg viewBox="0 0 589 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 13C296 80 290 -36 589 13V36.9999H0V13Z" fill={color} />
+    </svg>
+    
+</div>

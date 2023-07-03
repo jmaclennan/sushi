@@ -1,7 +1,7 @@
 import { routes } from "routes";
 
-const name = "business name"
-const description = "business description"
+const name = "Japanese Cuisine"
+const description = "Japanese Cuisine"
 const phone = 1234567890;
 const email = 'email@email.email'
 const address = ['123 Main Street', 'Beaumont, Alberta', 'T4X 1Z4, Canada']
