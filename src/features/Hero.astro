@@ -41,6 +41,8 @@ import Wave from "@/components/Wave.astro";
 
 <script>
   import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger);
   const subSection: HTMLElement | null = document.querySelector('#sub-section')
   const scrollCta: HTMLElement | null = document.querySelector('#scroll-cta')
   
@@ -53,16 +55,22 @@ import Wave from "@/components/Wave.astro";
   }
 
 
-  tl.set(subSection, {opacity: 1})
-  .fromTo('#logo', {y: 50},{ duration: 3, y:0, ease: 'elastic.out(2, 0.75)'})
+  tl.fromTo('#logo', {y: 50},{ duration: 3, y:0, ease: 'elastic.out(2, 0.75)'})
   .fromTo('#logo', {opacity: 0},{ duration: .5, opacity: 1, ease: 'ease.in'}, "-=3")
   .fromTo('#heading', {opacity: 0, y: 25},{ duration: 3, opacity: 1, y:0, ease: 'elastic.out(2, 0.75)'}, "-=2.75")
-  
-  // .fromTo(subHeading, {opacity: 0, y: 25}, { duration: 1, opacity: 1, y:0, ease: 'power2.out'})
-  // .fromTo(subSection, {y: hasScrolled ? 0 : '40vh'},{ duration: .75, y:0, ease: 'power4.out'}, "-=.85")
-  // .fromTo('.js-slogan-stagger', {opacity: 0, y: 10}, { stagger: .5, duration: .75, opacity: 1, y: 0, ease: 'power4.out'})
-  .fromTo(scrollCta, {opacity: 0},{ duration: .75, opacity: 1, ease: 'power4.out'}, "+=1")
 
+  const parallax = gsap.fromTo('#bg-video', {
+    y: 0
+  }, {
+    y: 200,
+    ease: 'ease.out',
+    scrollTrigger: {
+      trigger: '#hero',
+      start: 'bottom bottom',
+      end: 'bottom middle',
+      scrub: true,
+    }
+  })
 
   function showVideo(videoEl: HTMLVideoElement) {
     // check if video is ready to play
@@ -78,7 +86,6 @@ import Wave from "@/components/Wave.astro";
   }
 
   const bgVideo: HTMLVideoElement | null = document.querySelector('#bg-video');
-
     window.addEventListener("load", (event) => {
     if (bgVideo) showVideo(bgVideo);
   });

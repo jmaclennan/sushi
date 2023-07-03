@@ -37,7 +37,7 @@ const bentoKids = food.filter((item) => String(item.id) === 'bento-kids')[0];
         <div class="text-sm">X1 - Placeholder</div>
       </div>
 
-      <div class="col-span-12 lg:col-span-8 md:col-span-8 md:space-y-8 md:col-start-4 lg:col-start-3">
+      <div class="col-span-12 lg:col-span-8 md:col-span-8 md:space-y-8 md:col-start-3 lg:col-start-3">
         <MenuSectionTitle title="Kids Bento Meals" description="Served with steamed rice, dumplings, tempura & fruit or desserts. For kids aged 10 and under."/>
         <ul class="list-none py-8 md:py-0">
           {bentoKids.data.items.map((item) => (
