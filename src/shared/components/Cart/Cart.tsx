@@ -152,7 +152,7 @@ export const Cart: React.FC = () => {
         href={`tel:${config.phone}`}
         className="block button w-full text-center"
       >
-        Order By Phone: {formatPhoneNumber(config.phone)}
+        Order By Phone
       </a>
     </div>
   );

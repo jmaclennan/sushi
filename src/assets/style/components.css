@@ -37,11 +37,11 @@
   }
 
   .button {
-    @apply font-bold bg-bg-secondary text-white rounded-md px-4 py-2 focus:outline-none border border-bg-secondary;
+    @apply font-bold bg-bg-primary text-white rounded-md px-4 py-2 focus:outline-none border border-bg-primary hover:no-underline hover:bg-bg-primary/80;
   }
 
   .button-outline {
-    @apply font-bold  rounded-md px-4 py-2 focus:outline-none border border-bg-secondary bg-transparent text-black;
+    @apply font-bold  rounded-md px-4 py-2 focus:outline-none border border-bg-primary bg-transparent text-black;
   }
 
   .error {
