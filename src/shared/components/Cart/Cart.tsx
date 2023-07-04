@@ -62,7 +62,7 @@ export const Cart: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm w-[calc(100vw-23px)] md:w-auto md:min-w-[500px] shadow-lg">
+    <div className="max-w-md bg-neutral-100 p-4 rounded-xl space-y-2 text-sm w-[calc(100vw-23px)] md:w-auto md:min-w-[500px] text-right shadow-lg">
       <header className="border-b border-neutral-400 py-2 justify-between flex">
         <span className="header font-bold">Your Pickup Order</span>
         {!!cart.length && (
@@ -136,14 +136,14 @@ export const Cart: React.FC = () => {
       {!!cart.length && (
         <footer className="border-t border-neutral-400 py-2 space-y-4">
           <div>
-            <div className="flex justify-between">
-              <span>Subtotal:</span> <span>{formatPrice(totals.subTotal)}</span>
+            <div className="flex justify-end">
+              <span>Subtotal:</span> <div class="w-[100px] text-right">{formatPrice(totals.subTotal)}</div>
             </div>
-            <div className="flex justify-between">
-              <span>GST:</span> <span>{formatPrice(totals.gst)}</span>
+            <div className="flex justify-end">
+              <span>GST:</span> <div class="w-[100px] text-right">{formatPrice(totals.gst)}</div>
             </div>
-            <div className="flex justify-between">
-              <span>Total:</span> <span>{formatPrice(totals.total)}</span>
+            <div className="flex justify-end font-bold">
+              <span>Total:</span><div class="w-[100px] text-right">{formatPrice(totals.total)}</div>
             </div>
           </div>
         </footer>
