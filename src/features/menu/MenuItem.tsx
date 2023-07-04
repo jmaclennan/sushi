@@ -96,7 +96,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({
               </div>
             </div>
             {description && (
-              <span className="text-sm italic flex-wrap flex">
+              <span className="text-xs italic flex-wrap flex">
                 {description}
               </span>
             )}

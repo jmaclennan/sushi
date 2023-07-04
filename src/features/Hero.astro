@@ -55,14 +55,14 @@ import Wave from "@/components/Wave.astro";
   }
 
 
-  tl.fromTo('#logo', {y: 50},{ duration: 3, y:0, ease: 'elastic.out(2, 0.75)'})
-  .fromTo('#logo', {opacity: 0},{ duration: .5, opacity: 1, ease: 'ease.in'}, "-=3")
-  .fromTo('#heading', {opacity: 0, y: 25},{ duration: 3, opacity: 1, y:0, ease: 'elastic.out(2, 0.75)'}, "-=2.75")
+  tl.fromTo('#logo', {y: 50},{ duration: 1, y:0, ease: 'power3.out'})
+  .fromTo('#logo', {opacity: 0},{ duration: 1, opacity: 1, ease: 'power3.out'}, "-=1")
+  .fromTo('#heading', {opacity: 0, y: 25},{ duration: 1, opacity: 1, y:0, ease: 'power3.out'}, "-=.75")
 
   const parallax = gsap.fromTo('#bg-video', {
     y: 0
   }, {
-    y: 200,
+    y: 500,
     ease: 'ease.out',
     scrollTrigger: {
       trigger: '#hero',

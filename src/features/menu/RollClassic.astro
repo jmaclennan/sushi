@@ -14,64 +14,41 @@ const rollClassic = food.filter((item) => String(item.id) === 'rolls-classic')[0
   <div class="relative">
     <MenuSectionTitle title="Classic Rolls" description="Available in rice or soy bean paper and brown rice" classes="relative z-20" />
     <div class="max-w-full md:max-w-none overflow-scroll md:overflow-auto">
-      <div class="absolute top-0 right-0 w-1/5 h-full bg-gradient-to-l from-neutral-200 to-transparent pointer-events-none z-10 md:hidden"></div>
-      <div class="grid grid-cols-12 md:gap-8 max-w-full min-w-[500px]">
-        
-        
-        
-        <div class="col-span-12 md:col-span-8 md:col-start-3 flex flex-col">
+      <div class="absolute top-0 right-0 w-1/5 h-full bg-gradient-to-l from-neutral-200 to-transparent pointer-events-none z-10 sm:hidden"></div>
+      <div class="grid grid-cols-12 md:gap-x-8 lg:gap-x-12 max-w-full min-w-[500px]">
+        <div class="col-span-6">
           <div class="flex justify-end md:space-x-4 text-center font-bold text-sm py-2 mt-2">
             <div class="w-[90px] pl-8">Roll</div>
             <div class="w-[90px]">Cone</div>
           </div>
-          <ul class="list-none">
+        </div>
+        <div class="col-span-6 hidden md:flex justify-end">
+          <div class="flex justify-end md:space-x-4 text-center font-bold text-sm py-2 mt-2">
+            <div class="w-[90px] pl-8">Roll</div>
+            <div class="w-[90px]">Cone</div>
+          </div>
+        </div>
+        <div class="col-span-12 flex flex-col">
+          <ul class="list-none columns-1 md:columns-2 md:gap-8 lg:gap-12">
             {rollClassic?.data.items.map((item) => (
               <MenuItem {...item} category={rollClassic.data.category} altPriceCategory client:only="react" />
             ))}
           </ul>
         </div>
 
-        <div class="flex md:col-span-12 md:space-x-4 md:items-center md:justify-center md:py-8 text-xs font-bold">
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
+        <div class="flex flex-col justify-center items-center col-span-12 md:col-span-4 font-bold lg:order-none md:justify-start space-y-4 px-4 md:px-0 pt-8 md:pt-0">
+          <Image src={Food3} alt="Food" class="mt-8 border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+          <div class="text-sm">X1 - Placeholder</div>
+        </div>
+        <div class="col-span-12 md:col-span-4 font-bold lg:order-none flex justify-center flex-col items-center md:justify-start space-y-4 px-4 md:px-0 py-8 md:py-0">
+          <Image src={Food3} alt="Food" class="mt-8 border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+          <div class="text-sm">X1 - Placeholder</div>
+        </div>
+        <div class="col-span-12 md:col-span-4 font-bold lg:order-none flex justify-center flex-col items-center md:justify-start space-y-4 px-4 md:px-0 pb-8 md:py-0">
+          <Image src={Food3} alt="Food" class="mt-8 border-8 border-white shadow-md w-full" position="center" aspectRatio={4 / 3} width={400} />
+          <div class="text-sm">X1 - Placeholder</div>
         </div>
 
-        <!-- <div class="flex md:flex-col col-span-12 md:col-span-4 md:space-y-4 md:items-center md:justify-start md:py-8 text-xs font-bold pt-8 space-x-8 md:space-x-0">
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
-          <div class="flex flex-col items-center space-y-2">
-            <div class="aspect-square border-[10px] border-white">
-              <Image src={Food3} alt="" width={400} class="aspect-square w-full" quality={50} />
-            </div>
-            <span>X1 - Placeholder</span>
-          </div>
-        </div> -->
       </div>
   </div>
     

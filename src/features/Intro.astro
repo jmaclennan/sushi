@@ -4,7 +4,6 @@ import { Image } from '@astrojs/image/components';
 import Placeholder2 from '@/assets/images/oishii-placeholder-2.jpg';
 import Placeholder3 from '@/assets/images/oishii-placeholder-3.jpg';
 import InteriorPlaceholder from '@/assets/images/restaurant-interior.jpg';
-import Wave from "@/components/Wave.astro";
 import WaveSmall from "@/components/WaveSmall.astro";
 
 ---
@@ -13,33 +12,33 @@ import WaveSmall from "@/components/WaveSmall.astro";
   <WaveSmall color="#f5f5f5" classes="w-full z-30 -scale-x-100 md:-mb-1" id="wave"/>
   <section class="section bg-neutral-100 md-8 md:pt-16 relative">
     <Container class="space-y-16">
-      <h1 class="heading heading-2xl text-center ">Japanese Cuisine in Beaumont</h1>
+      <h1 class="heading heading-2xl text-center js-scroll-reveal">Japanese Cuisine in Beaumont</h1>
       <div class="grid grid-cols-12 gap-4 md:gap-16">
         <div class="col-span-12 xl:col-span-6">
-          <div class="aspect-video border-[10px] border-white bg-neutral-700">
+          <div class="aspect-video border-[10px] border-white bg-neutral-700 js-scroll-reveal">
             <Image src={InteriorPlaceholder} alt="" width={1200} class="aspect-video" quality={50} />
           </div>
         </div>
-        <div class="col-span-12 xl:col-span-6 justify-center flex flex-col space-y-8 py-16 px-4 md:px-16 xl:px-0">
+        <div class="col-span-12 xl:col-span-6 justify-center flex flex-col space-y-8 py-16 px-4 md:px-16 xl:px-0 js-scroll-reveal">
           <p class="max-w-prose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut praesentium sint quam quas, accusamus quia vitae atque! Placeat, eaque maxime architecto minus quidem, laborum eum at totam fugit similique perferendis?</p>
           <p class="max-w-prose">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut praesentium sint quam quas, accusamus quia vitae atque! Placeat, eaque maxime architecto minus quidem, laborum eum at totam fugit similique perferendis?</p>
         </div>
-        <div class="col-span-6 lg:col-span-3">
+        <div class="col-span-6 lg:col-span-3 js-scroll-reveal">
           <div class="aspect-square border-[10px] border-white ">
             <Image src={Placeholder3} alt="" width={400} class="aspect-square" quality={50} />
           </div>
         </div>
-        <div class="col-span-6 lg:col-span-3">
+        <div class="col-span-6 lg:col-span-3 js-scroll-reveal">
           <div class="aspect-square border-[10px] border-white ">
             <Image src={Placeholder2} alt="" width={400} class="aspect-square" quality={50} />
           </div>
         </div>
-        <div class="col-span-6 lg:col-span-3">
+        <div class="col-span-6 lg:col-span-3 js-scroll-reveal">
           <div class="aspect-square border-[10px] border-white ">
             <Image src={Placeholder3} alt="" width={400} class="aspect-square" fit="cover" quality={50} />
           </div>
         </div>
-        <div class="col-span-6 lg:col-span-3">
+        <div class="col-span-6 lg:col-span-3 js-scroll-reveal">
           <div class="aspect-square border-[10px] border-white ">
             <Image src={Placeholder2} alt="" width={400} class="aspect-square" quality={50} />
           </div>
@@ -65,7 +64,7 @@ import WaveSmall from "@/components/WaveSmall.astro";
   }
   
   const tl = gsap.timeline();
-  tl.fromTo('#intro-section', {y: hasScrolled ?  0 : waveHeight * 1.25 },{ duration: 4, y: 0, ease: 'elastic.out(2, 0.75)'})
+  tl.fromTo('#intro-section', {y: hasScrolled ?  0 : waveHeight * 1.25 },{ duration: 4, y: 0, ease: 'elastic.out(2, 0.75)'}, '+=.5')
   
   
 </script>
